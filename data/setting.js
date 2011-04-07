@@ -1,7 +1,8 @@
-/*
-On a return key, send the content of the textArea back to the add-on,
-and zero the textArea for the next time.
-*/
+//
+// @file 
+// @brief  設定パネル
+// @author ongaeshi
+// @date   2011/04/07
 
 var textArea = document.getElementById('annotation-box');
 
