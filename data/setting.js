@@ -13,8 +13,8 @@ textArea.onkeyup = function(event) {
   }
 };
 
-self.on('message', function() {
+self.on('message', function(linkformData) {
   var textArea = document.getElementById('annotation-box');
-  textArea.value = '';
+  textArea.value = linkformData[0][2];
   textArea.focus();
 });
