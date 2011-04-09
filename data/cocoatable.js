@@ -129,6 +129,19 @@
 		} );
 		return JSON.stringify(a);
 	}
+	CocoaTable.prototype.to_json = function () {
+		var self = this;
+		var rows = document.querySelectorAll('.cocoatable tbody tr');
+		var a = $A(rows).map( function(row) {
+			var columns = row.querySelectorAll('td');
+			return $A(columns).reduce( function(j, i, index) {
+				var t = $T(i);
+				j[ self._index2name[index] ] = t;
+				return j;
+			}, {} );
+		} );
+		return a;
+	}
 	CocoaTable.prototype.chooseUniqueId = function () {
 		var rows = document.querySelectorAll('.cocoatable tbody tr');
 		var max = Array.prototype.slice.call(rows).reduce( function (m, row) {
