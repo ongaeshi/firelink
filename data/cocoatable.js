@@ -29,11 +29,20 @@
 			e.textContent : e.innerText;
 	}
 	function setText(e, text) {
-		if ( typeof e.innerText == 'undefined' ) {
+//              Chrome               
+// 		if ( typeof e.innnerText == 'undefined' ) {
+// 			e.appendChild(document.createTextNode(text));
+// 		} else {
+// 			e.innnerText = text;
+// 		}
+
+                // Firefox
+		if ( typeof e.textContent == 'undefined' ) {
 			e.appendChild(document.createTextNode(text));
 		} else {
-			e.innerText = text;
+			e.textContent = text;
 		}
+
 	}
 	function keys(o) {
 		if ( Object.keys ) {
