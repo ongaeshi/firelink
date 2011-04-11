@@ -7,17 +7,11 @@
 var ctable = null;
 
 self.on('message', function(linkformData) {
-  // テーブルを空に
-  $('#formats').empty();
-
-  // テーブルを生成
-  ctable = new CocoaTable(linkformData, ['name', 'format']);
-});
-
-$('#ok_button').bind('click', function(event) {
-  postMessage(ctable.to_json());
-});
-
-$('#cancel_button').bind('click', function(event) {
-  postMessage(null);
+  if (ctable == null) {
+    ctable = new CocoaTable(linkformData, ['name', 'format']);
+      
+    ctable._listener.onUpdated = function () {
+      postMessage(ctable.to_json());
+    }
+  }
 });
