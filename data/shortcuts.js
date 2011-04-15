@@ -29,38 +29,40 @@ function isCtrl(event, window) {
     return event.ctrlKey;
 }
 
-function copylink(event, window) {
+function onKeyDown(event) {
   // リンク生成
   if (isCtrl(event, window) && event.keyCode == 67/*C*/) {
     if (!isSelected(window)) {
-      if (!event.shiftKey) {
-        postMessage({command:"Ctrl+C", isSelected: isSelected(window)});
-      }
+      if (!event.shiftKey)
+        postMessage({kind: 'createLink',
+                     linkdata: {text:  window.document.title,
+                                title: window.document.title,
+                                url:   window.document.location.href}
+                    });
       else
-        // 非選択時に Ctrl+Shift+C でホームに戻る
-        //fl.homeLinkform();
-        ;
+        postMessage({kind: 'home'});
 
     } else if (event.shiftKey) {
-//       fl.createLink(fl.currentLabel(), {text:  window.getSelection().toString(),
-//                                         title: window.document.title,
-//                                         url:   window.document.location.href});
+        postMessage({kind: 'createLink',
+                     linkdata: {text:  window.getSelection().toString(),
+                                title: window.document.title,
+                                url:   window.document.location.href}
+                    });
     }
   }
   
   // リンク切り替え & ホームに戻る
-//   if (isCtrl(event, window) && event.keyCode == 88/*X*/) {
-//     if (!isSelected(window)) {
-//       if (!event.shiftKey)
-//         fl.nextLinkform();
-//       else
-//         fl.prevLinkform();
-//     }
-//   }
+  if (isCtrl(event, window) && event.keyCode == 88/*X*/) {
+    if (!isSelected(window)) {
+      if (!event.shiftKey)
+        postMessage({kind: 'next'});
+      else
+        postMessage({kind: 'prev'});
+    }
+  }
 }
 
-var f = function(event){ copylink(event, window); };
-document.addEventListener("keydown", f, true);
+document.addEventListener("keydown", onKeyDown, true);
 
 })();
 
