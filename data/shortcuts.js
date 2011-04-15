@@ -30,6 +30,10 @@ function isCtrl(event, window) {
 }
 
 function onKeyDown(event) {
+  // input or textarea の時は何もしない
+  var tag = event.target.tagName && event.target.tagName.toLowerCase();
+  if (tag == "input" || tag == "textarea") { return; }
+
   // リンク生成
   if (isCtrl(event, window) && event.keyCode == 67/*C*/) {
     if (!isSelected(window)) {
