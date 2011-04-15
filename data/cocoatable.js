@@ -101,6 +101,7 @@
 		}, false);
 
 		this.setupButtonEventHandlers();
+		this.setupUpDownButtonEventHandlers();
 	}
 
 	CocoaTable.Cell = function (opts) {
@@ -205,6 +206,44 @@ try	{
 		}
 		}, true);
 		minus.addEventListener( 'click', function (ev) {
+			if ( self._selectedRow == null )
+				return;
+			
+			//var id = self._selectedRow.getAttribute('id');
+			self._selectedRow.parentNode.removeChild(self._selectedRow);
+			self.setSelectedRow(null);
+
+			self.updated();
+
+			ev.preventDefault();
+			ev.stopPropagation();
+		}, true);
+
+	}
+	CocoaTable.prototype.setupUpDownButtonEventHandlers = function () {
+		var up = document.getElementById('cocoatable-button-up');
+		var down = document.getElementById('cocoatable-button-down');
+
+		var self = this;
+		up.addEventListener( 'click', function (ev) {
+try	{
+			if ( self._editingCell ) {
+				self._editingCell.commit();
+				self._editingCell = null;
+				
+			}
+			
+			var row = self.addRow( self.emptyRowObjectRepresentation(),
+				self.chooseUniqueId(), true);
+			self.setSelectedRow(row);
+			
+			ev.preventDefault();
+			ev.stopPropagation();
+		}catch(e) {
+			console.log(e)
+		}
+		}, true);
+		down.addEventListener( 'click', function (ev) {
 			if ( self._selectedRow == null )
 				return;
 			

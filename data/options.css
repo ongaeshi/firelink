@@ -128,3 +128,27 @@ tbody td {
  #variables dd {
  	margin-bottom: 0.5em;
  }
+
+.up-down-buttons {
+	margin-top: 5px;
+	font-size: 120%;
+	clear: both;
+}
+.up-down-buttons .button {
+	width: 1em;
+	height: 1em;
+	border: 1px solid #666;
+	text-align: center;
+}
+ 
+.up-down-buttons .button:active {
+	background: #999;
+}
+ 
+.up-down-buttons .up {
+	float: left;
+}
+.up-down-buttons .down {
+	float: left;
+	border-left: 0 none;
+}
