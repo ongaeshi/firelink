@@ -99,6 +99,7 @@
 
 		this.setupButtonEventHandlers();
 		this.setupUpDownButtonEventHandlers();
+		this.setupEtcButtonHandlers();
 	}
 
 	CocoaTable.Cell = function (opts) {
@@ -217,16 +218,15 @@ try	{
 		}, true);
 
 	}
-
 	CocoaTable.prototype.selectedIndex = function () {
-	  var rows = document.querySelectorAll('.cocoatable tbody tr');
-          
-          var id = this._selectedRow.getAttribute('id');
-          for (var i = 0; i < rows.length; i++ ) {
-            if (rows[i].getAttribute('id') == id)
-              return i;
-          }
-        }
+		var rows = document.querySelectorAll('.cocoatable tbody tr');
+		
+		var id = this._selectedRow.getAttribute('id');
+		for (var i = 0; i < rows.length; i++ ) {
+			if (rows[i].getAttribute('id') == id)
+				return i;
+		}
+	}
 	CocoaTable.prototype.setupUpDownButtonEventHandlers = function () {
 		var up = document.getElementById('cocoatable-button-up');
 		var down = document.getElementById('cocoatable-button-down');
@@ -270,6 +270,46 @@ try	{
 
 			ev.preventDefault();
 			ev.stopPropagation();
+		}, true);
+	}
+
+	function removeChildAll(el) {
+		var list = el.childNodes;
+		for(var i=0; list.length>0; i++) {
+			el.removeChild(list[0]);
+		}
+	}
+
+	function dumpObj(o){
+		var str = "";
+		for(var i in o) {
+			str = str + "\n" + i + "\t"+ o[i];
+		}
+		console.log(str);
+	}
+
+	CocoaTable.prototype.setupEtcButtonHandlers = function () {
+		var restoreButton = document.getElementById('restore-button');
+
+		var self = this;
+	    
+		restoreButton.addEventListener( 'click', function (ev) {
+ 			if (confirm('restore setting?')) {
+				// 既存のテーブルは削除
+				var tbody = document.querySelector('.cocoatable tbody');
+				removeChildAll(tbody);
+
+				// 初期化
+				var defaultLinkformData = [
+					{name:"PlainText",   format:"%text%\n%url%"},
+					{name:"HTML",        format:"<a href=\"%url%\">%text%</a>"},
+					{name:"TiddlyWiki",  format:"[[%text%|%url%]]"},
+					{name:"hatena",      format:"[%url%:title=%text%]"}
+				];
+
+				self.initalize(defaultLinkformData);
+				self.updated();
+ 			}
 		}, true);
 	}
 	CocoaTable.Cell.prototype.element = function () {
