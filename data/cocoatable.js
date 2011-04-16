@@ -77,9 +77,6 @@
 		e.className = keys(o).join(" ");
 	}
 
-
-
-
 	function CocoaTable(data, headers) {
 		this._cellObjects = [];
 		this._editingCell = null;
@@ -220,43 +217,60 @@ try	{
 		}, true);
 
 	}
+
+	CocoaTable.prototype.selectedIndex = function () {
+	  var rows = document.querySelectorAll('.cocoatable tbody tr');
+          
+          var id = this._selectedRow.getAttribute('id');
+          for (var i = 0; i < rows.length; i++ ) {
+            if (rows[i].getAttribute('id') == id)
+              return i;
+          }
+        }
 	CocoaTable.prototype.setupUpDownButtonEventHandlers = function () {
 		var up = document.getElementById('cocoatable-button-up');
 		var down = document.getElementById('cocoatable-button-down');
 
 		var self = this;
+	  
 		up.addEventListener( 'click', function (ev) {
-try	{
+		try	{
 			if ( self._editingCell ) {
 				self._editingCell.commit();
 				self._editingCell = null;
 				
 			}
-			
-			var row = self.addRow( self.emptyRowObjectRepresentation(),
-				self.chooseUniqueId(), true);
-			self.setSelectedRow(row);
-			
+
+			var rows = document.querySelectorAll('.cocoatable tbody tr');
+			var index = self.selectedIndex();
+
+			if (index > 0) {
+				rows[index].parentNode.insertBefore(rows[index], rows[index - 1]);
+				self.updated();
+			}
+
 			ev.preventDefault();
 			ev.stopPropagation();
 		}catch(e) {
 			console.log(e)
 		}
 		}, true);
+		
 		down.addEventListener( 'click', function (ev) {
 			if ( self._selectedRow == null )
 				return;
 			
-			//var id = self._selectedRow.getAttribute('id');
-			self._selectedRow.parentNode.removeChild(self._selectedRow);
-			self.setSelectedRow(null);
+			var rows = document.querySelectorAll('.cocoatable tbody tr');
+			var index = self.selectedIndex();
 
-			self.updated();
+			if (index < rows.length - 1) {
+				rows[index].parentNode.insertBefore(rows[index + 1], rows[index]);
+				self.updated();
+			}
 
 			ev.preventDefault();
 			ev.stopPropagation();
 		}, true);
-
 	}
 	CocoaTable.Cell.prototype.element = function () {
 		return this._e;
