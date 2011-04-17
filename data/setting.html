@@ -9,19 +9,21 @@
 
 <body>
   <h1>Formats</h1>
-  <div id="table-container"> 
-    <table id="cocoatable" class="cocoatable"> 
-      <thead> 
-	<tr> 
-	  <td id="column-name">Name</td> 
-	  <td id="column-format">Format</td> 
-	</tr> 
-      </thead> 
-      <tbody id="formats">
+  <div id="table-container">
+    <div id="table-main">
+      <table id="cocoatable" class="cocoatable"> 
+        <thead> 
+	  <tr> 
+	    <td id="column-name">Name</td> 
+	    <td id="column-format">Format</td> 
+	  </tr> 
+        </thead> 
+        <tbody id="formats">
          <!-- ダミーデータ、消す予定 -->
-	<!-- <tr id="cocoatable-row0" class=" selected"><td><span>Plain text</span></td><td><span>%text%\n%url%\n\n\n</span></td><td><span></span></td></tr><tr id="cocoatable-row1"><td><span>HTML</span></td><td><span>&lt;a href="%url%"&gt;%htmlEscapedText%&lt;/a&gt;</span></td><td><span></span></td></tr><tr id="cocoatable-row2"><td><span>Test</span></td><td><span>[%text%] %url%</span></td><td><span></span></td></tr><tr id="cocoatable-row3"><td><span>T</span></td><td><span>T</span></td><td><span></span></td></tr><tr id="cocoatable-row4"><td><span>a</span></td><td><span>a</span></td><td><span></span></td></tr><tr id="cocoatable-row5"><td><span>dfdfd</span></td><td><span>adf</span></td><td><span></span></td></tr> -->
-      </tbody>
-    </table>
+	<tr id="cocoatable-row0" class=" selected"><td><span>Plain text</span></td><td><span>%text%\n%url%\n\n\n</span></td><td><span></span></td></tr><tr id="cocoatable-row1"><td><span>HTML</span></td><td><span>&lt;a href="%url%"&gt;%htmlEscapedText%&lt;/a&gt;</span></td><td><span></span></td></tr><tr id="cocoatable-row2"><td><span>Test</span></td><td><span>[%text%] %url%</span></td><td><span></span></td></tr><tr id="cocoatable-row3"><td><span>T</span></td><td><span>T</span></td><td><span></span></td></tr><tr id="cocoatable-row4"><td><span>a</span></td><td><span>a</span></td><td><span></span></td></tr><tr id="cocoatable-row5"><td><span>dfdfd</span></td><td><span>adf</span></td><td><span></span></td></tr>
+        </tbody>
+      </table>
+    </div>
     <div id="table-footer">
       <div class="plus-minus-buttons" id="button-container"> 
         <div id="cocoatable-button-plus" class="button plus">+</div> 
@@ -35,7 +37,7 @@
       </div>
       <div class="etc-buttons" id="button-etc">
         <button id="restore-button">Restore Setting</button>
-        <div style="clear:both"><!-- --></div> 
+<!--         <div style="clear:both"><\!-- -\-></div>  -->
       </div>
     </div>
   </div>
