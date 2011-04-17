@@ -3,7 +3,7 @@ padding: 4px;
 				 padding-left: 20px;
 				 padding-right: 20px;
 				 font-weight: bold;
-				 background-color: #ccc;
+				 background-color #ccc;
 border: 1px solid #999;
 				border-spacing: 0;
 				border-collapse: collapse;
@@ -83,7 +83,7 @@ img.icon {
 }
 
 h1 {
-	margin: 16px;
+/* 	margin: 16px; */
 }
 
 h2 {
@@ -151,4 +151,8 @@ tbody td {
 .up-down-buttons .down {
 	float: left;
 	border-left: 0 none;
+}
+
+.etc-buttons {
+	float: right;
 }

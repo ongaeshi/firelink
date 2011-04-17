@@ -300,6 +300,7 @@ try	{
 				removeChildAll(tbody);
 
 				// 初期化
+				// @todo main.jsと共有
 				var defaultLinkformData = [
 					{name:"PlainText",   format:"%text%\n%url%"},
 					{name:"HTML",        format:"<a href=\"%url%\">%text%</a>"},
