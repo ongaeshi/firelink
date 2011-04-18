@@ -77,9 +77,6 @@
 		e.className = keys(o).join(" ");
 	}
 
-
-
-
 	function CocoaTable(data, headers) {
 		this._cellObjects = [];
 		this._editingCell = null;
@@ -101,6 +98,8 @@
 		}, false);
 
 		this.setupButtonEventHandlers();
+		this.setupUpDownButtonEventHandlers();
+		this.setupEtcButtonHandlers();
 	}
 
 	CocoaTable.Cell = function (opts) {
@@ -218,6 +217,101 @@ try	{
 			ev.stopPropagation();
 		}, true);
 
+	}
+	CocoaTable.prototype.selectedIndex = function () {
+		var rows = document.querySelectorAll('.cocoatable tbody tr');
+		
+		var id = this._selectedRow.getAttribute('id');
+		for (var i = 0; i < rows.length; i++ ) {
+			if (rows[i].getAttribute('id') == id)
+				return i;
+		}
+	}
+	CocoaTable.prototype.setupUpDownButtonEventHandlers = function () {
+		var up = document.getElementById('cocoatable-button-up');
+		var down = document.getElementById('cocoatable-button-down');
+
+		var self = this;
+	  
+		up.addEventListener( 'click', function (ev) {
+		try	{
+			if ( self._editingCell ) {
+				self._editingCell.commit();
+				self._editingCell = null;
+				
+			}
+
+			var rows = document.querySelectorAll('.cocoatable tbody tr');
+			var index = self.selectedIndex();
+
+			if (index > 0) {
+				rows[index].parentNode.insertBefore(rows[index], rows[index - 1]);
+				self.updated();
+			}
+
+			ev.preventDefault();
+			ev.stopPropagation();
+		}catch(e) {
+			console.log(e)
+		}
+		}, true);
+		
+		down.addEventListener( 'click', function (ev) {
+			if ( self._selectedRow == null )
+				return;
+			
+			var rows = document.querySelectorAll('.cocoatable tbody tr');
+			var index = self.selectedIndex();
+
+			if (index < rows.length - 1) {
+				rows[index].parentNode.insertBefore(rows[index + 1], rows[index]);
+				self.updated();
+			}
+
+			ev.preventDefault();
+			ev.stopPropagation();
+		}, true);
+	}
+
+	function removeChildAll(el) {
+		var list = el.childNodes;
+		for(var i=0; list.length>0; i++) {
+			el.removeChild(list[0]);
+		}
+	}
+
+	function dumpObj(o){
+		var str = "";
+		for(var i in o) {
+			str = str + "\n" + i + "\t"+ o[i];
+		}
+		console.log(str);
+	}
+
+	CocoaTable.prototype.setupEtcButtonHandlers = function () {
+		var restoreButton = document.getElementById('restore-button');
+
+		var self = this;
+	    
+		restoreButton.addEventListener( 'click', function (ev) {
+ 			if (confirm('restore setting?')) {
+				// 既存のテーブルは削除
+				var tbody = document.querySelector('.cocoatable tbody');
+				removeChildAll(tbody);
+
+				// 初期化
+				// @todo main.jsと共有
+				var defaultLinkformData = [
+					{name:"PlainText",   format:"%text%\n%url%"},
+					{name:"HTML",        format:"<a href=\"%url%\">%text%</a>"},
+					{name:"TiddlyWiki",  format:"[[%text%|%url%]]"},
+					{name:"hatena",      format:"[%url%:title=%text%]"}
+				];
+
+				self.initalize(defaultLinkformData);
+				self.updated();
+ 			}
+		}, true);
 	}
 	CocoaTable.Cell.prototype.element = function () {
 		return this._e;

@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
@@ -9,24 +8,75 @@
 </head>
 
 <body>
-  <h2>Formats</h2>
-  <div id="configuration"> 
-    <table id="cocoatable" class="cocoatable"> 
-      <thead> 
-	<tr> 
-	  <td id="column-name">Name</td> 
-	  <td id="column-format">Format</td> 
-	</tr> 
-      </thead> 
-      <tbody id="formats"> 
-      </tbody> 
-    </table> 
-    <div class="plus-minus-buttons" id="button-container"> 
-      <div id="cocoatable-button-plus" class="button plus">+</div> 
-      <div id="cocoatable-button-minus" class="button minus">-</div> 
-      <div style="clear:both"><!-- --></div> 
+  <h1>Formats</h1>
+  <div id="table-container">
+    <div id="table-main">
+      <table id="cocoatable" class="cocoatable"> 
+        <thead> 
+	  <tr> 
+	    <td id="column-name">Name</td> 
+	    <td id="column-format">Format</td> 
+	  </tr> 
+        </thead> 
+        <tbody id="formats">
+         <!-- ダミーデータ、消す予定 -->
+         <!-- 	<tr id="cocoatable-row0" class=" selected"><td><span>Plain text</span></td><td><span>%text%\n%url%\n\n\n</span></td><td><span></span></td></tr><tr id="cocoatable-row1"><td><span>HTML</span></td><td><span>&lt;a href="%url%"&gt;%htmlEscapedText%&lt;/a&gt;</span></td><td><span></span></td></tr><tr id="cocoatable-row2"><td><span>Test</span></td><td><span>[%text%] %url%</span></td><td><span></span></td></tr><tr id="cocoatable-row3"><td><span>T</span></td><td><span>T</span></td><td><span></span></td></tr><tr id="cocoatable-row4"><td><span>a</span></td><td><span>a</span></td><td><span></span></td></tr><tr id="cocoatable-row5"><td><span>dfdfd</span></td><td><span>adf</span></td><td><span></span></td></tr> -->
+        </tbody>
+      </table>
+    </div>
+    <div id="table-footer">
+      <div class="plus-minus-buttons" id="button-container"> 
+        <div id="cocoatable-button-plus" class="button plus">+</div> 
+        <div id="cocoatable-button-minus" class="button minus">-</div> 
+        <div style="clear:both"><!-- --></div> 
+      </div>
+      <div class="up-down-buttons" id="button-updown"> 
+        <div id="cocoatable-button-up" class="button up">^</div> 
+        <div id="cocoatable-button-down" class="button down">v</div> 
+        <div style="clear:both"><!-- --></div> 
+      </div>
+      <div class="etc-buttons" id="button-etc">
+        <button id="restore-button">Restore Setting</button>
+<!--         <div style="clear:both"><\!-- -\-></div>  -->
+      </div>
     </div>
   </div>
+
+  <br>
+  <br>
+
+  <h1>Manual</h1>
+  <h2>Keyboard ShortCuts</h2>
+  <h3>Normal</h3>
+  <dl id="dl-shortcuts-normal" class="variables">
+    <dt>Ctrl+C</dt>
+    <dd>Create link.</dd>
+    <dt>Ctrl+Shift+C</dt>
+    <dd>Home link format(No 0).</dd>
+    <dt>Ctrl+X</dt>
+    <dd>Next link format.</dd>
+    <dt>Ctrl+Shift+X</dt>
+    <dd>Prev link format.</dd>
+  </dl>
+
+  <h3>Selected Text</h3>
+  <dl id="dl-shortcuts-selected" class="variables">
+    <dt>Ctrl+C</dt>
+    <dd>Nothing is done. (Because it is used to copy the text)</dd>
+    <dt>Ctrl+Shift+C</dt>
+    <dd>Selected text to %text% and Create link. </dd>
+  </dl>
+
+  <h2>Variables</h2>
+  <dl id="dl-variables" class="variables">
+    <dt>%text%</dt>
+    <dd>Page title or selected text.</dd>
+    <dt>%title%</dt>
+    <dd>Page title.</dd>
+    <dt>%url%</dt>
+    <dd>Page URL.</dd>
+  </dl>
+  
 </body>
 
 </html>
