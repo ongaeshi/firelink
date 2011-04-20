@@ -1,7 +1,7 @@
 Keyboard ShortCuts
 ====================
 
-<h3>Normal</h3>
+## Normal
 <dl id="dl-shortcuts-normal" class="variables">
   <dt>Ctrl+C</dt>
   <dd>Create link.</dd>
@@ -13,7 +13,7 @@ Keyboard ShortCuts
   <dd>Prev link format.</dd>
 </dl>
 
-<h3>Selected Text</h3>
+## Selected Text
 <dl id="dl-shortcuts-selected" class="variables">
   <dt>Ctrl+C</dt>
   <dd>Nothing is done. (Because it is used to copy the text)</dd>
