@@ -13,12 +13,13 @@ It is very convenient
 * Preserve URL by a favorite text form.
 * ShortenURL and post Twitter(Future).
 
+HomePage
+---------------
+[FireLink](http://firelink.ongaeshi.me/)
+
 Install
 ---------------
 [Download Add-on](https://addons.mozilla.org/en-US/firefox/addon/firelink/)
 
-HomePage
----------------
-[FireLink](http://ongaeshi.me/firelink)
 
 	
