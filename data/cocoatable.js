@@ -306,7 +306,8 @@ try	{
 					{name:"HTML",        format:"<a href=\"%url%\">%text%</a>"},
 					{name:"TiddlyWiki",  format:"[[%text%|%url%]]"},
 					{name:"hatena",      format:"[%url%:title=%text%]"},
-					{name:"Today's Link",  format:"%date% <a href=\"%url%\">%text%</a>"}
+					{name:"Today's Link",  format:"%date% <a href=\"%url%\">%text%</a>"},
+					{name:"TiddlyWiki with DateTime",  format:"* %DateTime% [[%text%|%url%]]"}
 				];
 
 				self.initalize(defaultLinkformData);

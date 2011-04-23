@@ -1,6 +1,7 @@
 Variables
 ====================
 
+## Basic Variables
 <dl id="dl-variables" class="variables">
   <dt>%text%</dt>
   <dd>Page title or selected text.</dd>
@@ -8,5 +9,28 @@ Variables
   <dd>Page title.</dd>
   <dt>%url%</dt>
   <dd>Page URL.</dd>
+  <dt>%date%</dt>
+</dl>
+
+## Date & Time Variables
+<dl id="dl-variables" class="variables">
+  <dt>%date%</dt>
+  <dd>2011/03/04</dd>
+  <dt>%Date%</dt>
+  <dd>2011-03-04</dd>
+  <dt>%datetime%</dt>
+  <dd>2011/03/04 05:06</dd>
+  <dt>%DateTime%</dt>
+  <dd>2011-03-04 05:06</dd>
+  <dt>%year%</dt>
+  <dd>2011</dd>
+  <dt>%month%</dt>
+  <dd>03</dd>
+  <dt>%day%</dt>
+  <dd>04</dd>
+  <dt>%hour%</dt>
+  <dd>05</dd>
+  <dt>%min%</dt>
+  <dd>06</dd>
 </dl>
 
