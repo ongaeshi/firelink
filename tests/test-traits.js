@@ -125,7 +125,7 @@ exports.test_test_run = function(test) {
     c2.add('test');
     test.assertEqual(c2.length, 1); // 1
     test.assertEqual(c2.list[0], 'test'); // 'test'
-    c2.forEach(console.log);     // > ×info: 'test' → ○info: test 0 test
+    // c2.forEach(console.log);     // > ×info: 'test' → ○info: test 0 test
   }
 };
 
