@@ -27,9 +27,16 @@ function test_parseDate(test) {
   }
 }
 
+function test_bitly(test) {
+  test.assertEqual(fl.bitly("%bitly%", "http://www.yahoo.co.jp"), "http://bit.ly/adbcdeg");
+  test.assertEqual(fl.bitly("DUMMY %bitly%", "http://www.yahoo.co.jp"), "DUMMY http://bit.ly/adbcdeg");
+  test.assertEqual(fl.bitly("hogehoge fooga", "http://www.yahoo.co.jp"), "hogehoge fooga");
+}
+
 exports.test_test_run = function(test) {
   test.pass("Test FireLink Lib .....");
   test_parseDate(test);
+  test_bitly(test);
 };
 
 
