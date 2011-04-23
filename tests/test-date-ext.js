@@ -19,7 +19,7 @@ exports.test_test_run = function(test) {
   test.assertEqual(d.day, 5);
   test.assertEqual(d.hour, 11);
   test.assertEqual(d.min, 5);
-  test.assertEqual(d.dateStr1(), "2001/05/05 11:05");
-  test.assertEqual(d.dateStr2(), "2001-05-05 11:05");
+  test.assertEqual(d.to_s_dateTime(), "2001/05/05 11:05");
+  test.assertEqual(d.to_s_DateTime(), "2001-05-05 11:05");
 };
 
