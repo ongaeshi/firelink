@@ -13,6 +13,14 @@ Variables
   <dd>Shorten URL, from http://is.gd .</dd>
 </dl>
 
+## Special
+<dl id="dl-variables" class="variables">
+  <dt>\n</dt>
+  <dd>Enter.</dd>
+  <dt>\t</dt>
+  <dd>Tab.</dd>
+</dl>
+
 ## Date & Time
 <dl id="dl-variables" class="variables">
   <dt>%date%</dt>
