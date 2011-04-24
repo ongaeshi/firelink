@@ -11,7 +11,7 @@ It is very convenient
 
 * The blog is written.
 * Preserve URL by a favorite text form.
-* ShortenURL and post Twitter(Future).
+* ShortenURL and post Twitter.
 
 HomePage
 ---------------
@@ -21,5 +21,11 @@ Install
 ---------------
 [Download Add-on](https://addons.mozilla.org/en-US/firefox/addon/firelink/)
 
+Manual
+---------------
 
-	
+Reference
+---------------
+* [Keyboard ShortCuts](https://github.com/ongaeshi/firelink/blob/master/shortcuts.md)
+* [Variables](https://github.com/ongaeshi/firelink/blob/master/variables.md)
+* [HISTORY](https://github.com/ongaeshi/firelink/blob/master/HISTORY.md)

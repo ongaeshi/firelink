@@ -1,3 +1,12 @@
+# 0.7 2011/04/25
+
+* Add Date & Time variables.
+** %date%, %datetime%, %year%, .... 
+* Add %isgd% variable. Create shorten URL !!
+* Add "\n", "\t" variable.
+* Expanded linkform of the root menu.
+* Bug fix.
+
 # 0.6 2011/04/19
 
 * Addition of Keyboard shortcut.
