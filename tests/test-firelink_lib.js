@@ -31,6 +31,7 @@ function test_isgd(test) {
   test.assertEqual(fl.isgd("%isgd%", "http://www.yahoo.co.jp"), "http://is.gd/OhDpSf");
   test.assertEqual(fl.isgd("DUMMY %isgd%", "http://www.yahoo.co.jp"), "DUMMY http://is.gd/OhDpSf");
   test.assertEqual(fl.isgd("hogehoge fooga", "http://www.yahoo.co.jp"), "hogehoge fooga");
+  test.assertEqual(fl.isgd("hogehoge %ISGD% fooga", "http://www.yahoo.co.jp"), "hogehoge %ISGD% fooga");
 }
 
 exports.test_test_run = function(test) {
@@ -38,8 +39,4 @@ exports.test_test_run = function(test) {
   test_parseDate(test);
   test_isgd(test);
 };
-
-
-
-
 
