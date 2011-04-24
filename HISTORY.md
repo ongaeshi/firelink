@@ -3,7 +3,7 @@
 * Add Date & Time variables.
 ** %date%, %datetime%, %year%, .... 
 * Add %isgd% variable. Create shorten URL !!
-* Add "\\n", "\\t" variable.
+* Add "\n", "\t" variable.
 * Expanded linkform of the root menu.
 * Bug fix.
 
