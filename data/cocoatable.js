@@ -1,3 +1,12 @@
+/* -*- mode: JavaScript; tab-width: 4; indent-tabs-mode: t; c-basic-offset: 4 -*- */
+//
+// @brief
+// @author ongaeshi
+// @date 2011/04/24   
+//
+//  Change for Firefox Add-on SDK.
+//
+// -------------------------------------------
 //
 // cocoatable.js
 // Copyright(c) 2010 ku ku0522a*gmail.com
@@ -20,6 +29,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 //
+// -------------------------------------------
 	
 	function $A(a) {
 		return Array.prototype.slice.call(a)
