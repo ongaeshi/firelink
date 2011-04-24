@@ -1,3 +1,12 @@
+/* -*- mode: JavaScript; tab-width: 4; indent-tabs-mode: t; c-basic-offset: 4 -*- */
+//
+// @brief
+// @author ongaeshi
+// @date 2011/04/24   
+//
+//  Change for Firefox Add-on SDK.
+//
+// -------------------------------------------
 //
 // cocoatable.js
 // Copyright(c) 2010 ku ku0522a*gmail.com
@@ -20,6 +29,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 //
+// -------------------------------------------
 	
 	function $A(a) {
 		return Array.prototype.slice.call(a)
@@ -302,10 +312,13 @@ try	{
 				// 初期化
 				// @todo main.jsと共有
 				var defaultLinkformData = [
-					{name:"PlainText",   format:"%text%\n%url%"},
+					{name:"PlainText",   format:"%text%\\n%url%"},
 					{name:"HTML",        format:"<a href=\"%url%\">%text%</a>"},
 					{name:"TiddlyWiki",  format:"[[%text%|%url%]]"},
-					{name:"hatena",      format:"[%url%:title=%text%]"}
+					{name:"hatena",      format:"[%url%:title=%text%]"},
+					{name:"Today's Link",  format:"%date% <a href=\"%url%\">%text%</a>"},
+					{name:"TiddlyWiki with DateTime",  format:"* %DateTime% [[%text%|%url%]]"},
+					{name:"Twitter",  format:"%text% %isgd%"}
 				];
 
 				self.initalize(defaultLinkformData);
