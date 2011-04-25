@@ -34,9 +34,19 @@ function test_isgd(test) {
   test.assertEqual(fl.isgd("hogehoge %ISGD% fooga", "http://www.yahoo.co.jp"), "hogehoge %ISGD% fooga");
 }
 
+function test_changeLinkform(test) {
+  fl.homeLinkform();
+  test.assertEqual(fl.currentIndex(), 0);
+  fl.secondLinkform();
+  test.assertEqual(fl.currentIndex(), 1);
+  fl.thirdLinkform();
+  test.assertEqual(fl.currentIndex(), 2);
+}
+
 exports.test_test_run = function(test) {
   test.pass("Test FireLink Lib .....");
   test_parseDate(test);
   test_isgd(test);
+  test_changeLinkform(test);
 };
 

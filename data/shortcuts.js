@@ -34,35 +34,38 @@ function onKeyDown(event) {
   var tag = event.target.tagName && event.target.tagName.toLowerCase();
   if (tag == "input" || tag == "textarea") { return; }
 
+  var linkdata = null;
+
+  // テキスト選択、非選択で変わる
+  if (!isSelected(window))
+    linkdata = {text:  window.document.title,
+                title: window.document.title,
+                url:   window.document.location.href};
+  else
+    linkdata = {text:  window.getSelection().toString(),
+                title: window.document.title,
+                url:   window.document.location.href};
+
   // リンク生成
   if (isCtrl(event, window) && event.keyCode == 67/*C*/) {
     if (!isSelected(window)) {
       if (!event.shiftKey)
-        postMessage({kind: 'createLink',
-                     linkdata: {text:  window.document.title,
-                                title: window.document.title,
-                                url:   window.document.location.href}
-                    });
+        postMessage({kind: 'createLink', linkdata: linkdata});
       else
-        postMessage({kind: 'home'});
+        postMessage({kind: 'home', linkdata: linkdata});
 
     } else if (event.shiftKey) {
-        postMessage({kind: 'createLink',
-                     linkdata: {text:  window.getSelection().toString(),
-                                title: window.document.title,
-                                url:   window.document.location.href}
-                    });
+        postMessage({kind: 'createLink', linkdata: linkdata});
     }
   }
   
   // リンク切り替え & ホームに戻る
+  // Ctrl + X はテキスト選択時でも有効
   if (isCtrl(event, window) && event.keyCode == 88/*X*/) {
-    if (!isSelected(window)) {
       if (!event.shiftKey)
-        postMessage({kind: 'next'});
+        postMessage({kind: 'next', linkdata: linkdata});
       else
-        postMessage({kind: 'prev'});
-    }
+        postMessage({kind: 'prev', linkdata: linkdata});
   }
 }
 
