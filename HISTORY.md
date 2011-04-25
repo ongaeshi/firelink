@@ -5,6 +5,7 @@
 * Add %isgd% variable. Create shorten URL !!
 * Add "\n", "\t" variable.
 * Expanded linkform of the root menu.
+* Add test.
 * Bug fix.
 
 # 0.6 2011/04/19
