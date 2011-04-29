@@ -35,8 +35,8 @@ exports.test_commands = function(test) {
   commands.allTabs("DUMMY", "%text%\n%url%");
   test.assertEqual("\nabout:blank\n", clipboard.get());
   
-//   commands.allTabsSpace("DUMMY", "%text%\n%url%");
-//   test.assertEqual("\nabout:blank\n\n", clipboard.get());
+  commands.allTabsSpace("DUMMY", "%text%\n%url%");
+  test.assertEqual("\nabout:blank\n\n", clipboard.get());
   
 };
 
