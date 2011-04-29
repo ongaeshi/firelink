@@ -30,6 +30,14 @@ exports.test_commands = function(test) {
   test.assertEqual(fl.currentIndex(), 1);
   commands.thirdLinkform();
   test.assertEqual(fl.currentIndex(), 2);
+
+  // 全てのタブをリンク
+  commands.allTabs("DUMMY", "%text%\n%url%");
+  test.assertEqual("\nabout:blank\n", clipboard.get());
+  
+//   commands.allTabsSpace("DUMMY", "%text%\n%url%");
+//   test.assertEqual("\nabout:blank\n\n", clipboard.get());
+  
 };
 
 
