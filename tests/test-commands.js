@@ -37,7 +37,18 @@ exports.test_commands = function(test) {
   
   commands.allTabsSpace("DUMMY", "%text%\n%url%");
   test.assertEqual("\nabout:blank\n\n", clipboard.get());
-  
+
+  // リンク種類を直接設定
+  commands.setLinkFormIndex(0);
+  test.assertEqual(0, fl.currentIndex());
+  commands.setLinkFormIndex(1);
+  test.assertEqual(1, fl.currentIndex());
+  commands.setLinkFormIndex(2);
+  test.assertEqual(2, fl.currentIndex());
+  commands.setLinkFormIndex(3);
+  test.assertEqual(3, fl.currentIndex());
+  commands.setLinkFormIndex(500);
+  test.assertEqual(3, fl.currentIndex());
 };
 
 

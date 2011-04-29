@@ -67,6 +67,11 @@ function onKeyDown(event) {
       else
         postMessage({kind: 'prev', linkdata: linkdata});
   }
+
+  // ダイレクト選択
+  if (49 <= event.keyCode && event.keyCode <= 57) {
+    postMessage({kind: 'select', index: event.keyCode - 49});
+  }
 }
 
 document.addEventListener("keydown", onKeyDown, true);
