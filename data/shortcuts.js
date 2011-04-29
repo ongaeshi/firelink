@@ -49,25 +49,13 @@ function onKeyDown(event) {
   // リンク生成
   if (isCtrl(event, window) && event.keyCode == 67/*C*/) {
     if (!isSelected(window)) {
-      if (!event.shiftKey)
-        postMessage({kind: 'createLink', linkdata: linkdata});
-      else
-        postMessage({kind: 'home', linkdata: linkdata});
+      postMessage({kind: 'redoLink', linkdata: linkdata});
 
     } else if (event.shiftKey) {
-        postMessage({kind: 'createLink', linkdata: linkdata});
+      postMessage({kind: 'redoLink', linkdata: linkdata});
     }
   }
   
-  // リンク切り替え & ホームに戻る
-  // Ctrl + X はテキスト選択時でも有効
-  if (isCtrl(event, window) && event.keyCode == 88/*X*/) {
-      if (!event.shiftKey)
-        postMessage({kind: 'next', linkdata: linkdata});
-      else
-        postMessage({kind: 'prev', linkdata: linkdata});
-  }
-
   // ダイレクト選択
   if (49 <= event.keyCode && event.keyCode <= 57) {
     postMessage({kind: 'select', index: event.keyCode - 49});
