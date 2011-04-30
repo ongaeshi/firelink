@@ -1,3 +1,10 @@
+# 0.8 2011/04/30
+
+* "All Tabs" command can be chosen linkform.
+* Add "All Tabs Space" command.
+* Add shortcut, "Direct Select".
+** "1", "2", "3", "4", "5" key, select No. linkform.
+
 # 0.7 2011/04/25
 
 * Add Date & Time variables.
