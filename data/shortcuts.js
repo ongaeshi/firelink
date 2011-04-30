@@ -34,35 +34,31 @@ function onKeyDown(event) {
   var tag = event.target.tagName && event.target.tagName.toLowerCase();
   if (tag == "input" || tag == "textarea") { return; }
 
+  var linkdata = null;
+
+  // テキスト選択、非選択で変わる
+  if (!isSelected(window))
+    linkdata = {text:  window.document.title,
+                title: window.document.title,
+                url:   window.document.location.href};
+  else
+    linkdata = {text:  window.getSelection().toString(),
+                title: window.document.title,
+                url:   window.document.location.href};
+
   // リンク生成
   if (isCtrl(event, window) && event.keyCode == 67/*C*/) {
     if (!isSelected(window)) {
-      if (!event.shiftKey)
-        postMessage({kind: 'createLink',
-                     linkdata: {text:  window.document.title,
-                                title: window.document.title,
-                                url:   window.document.location.href}
-                    });
-      else
-        postMessage({kind: 'home'});
+      postMessage({kind: 'redoLink', linkdata: linkdata});
 
     } else if (event.shiftKey) {
-        postMessage({kind: 'createLink',
-                     linkdata: {text:  window.getSelection().toString(),
-                                title: window.document.title,
-                                url:   window.document.location.href}
-                    });
+      postMessage({kind: 'redoLink', linkdata: linkdata});
     }
   }
   
-  // リンク切り替え & ホームに戻る
-  if (isCtrl(event, window) && event.keyCode == 88/*X*/) {
-    if (!isSelected(window)) {
-      if (!event.shiftKey)
-        postMessage({kind: 'next'});
-      else
-        postMessage({kind: 'prev'});
-    }
+  // ダイレクト選択
+  if (49 <= event.keyCode && event.keyCode <= 57) {
+    postMessage({kind: 'select', index: event.keyCode - 49});
   }
 }
 

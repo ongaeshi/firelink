@@ -1,10 +1,18 @@
+# 0.8 2011/04/30
+
+* "All Tabs" command can be chosen linkform.
+* Add "All Tabs Space" command.
+* Add shortcut, "Direct Select".
+  * "1", "2", "3", "4", "5" key, select No. linkform.
+
 # 0.7 2011/04/25
 
 * Add Date & Time variables.
-** %date%, %datetime%, %year%, .... 
+  * %date%, %datetime%, %year%, .... 
 * Add %isgd% variable. Create shorten URL !!
 * Add "\n", "\t" variable.
 * Expanded linkform of the root menu.
+* Add test.
 * Bug fix.
 
 # 0.6 2011/04/19

@@ -314,11 +314,8 @@ try	{
 				var defaultLinkformData = [
 					{name:"PlainText",   format:"%text%\\n%url%"},
 					{name:"HTML",        format:"<a href=\"%url%\">%text%</a>"},
-					{name:"TiddlyWiki",  format:"[[%text%|%url%]]"},
-					{name:"hatena",      format:"[%url%:title=%text%]"},
-					{name:"Today's Link",  format:"%date% <a href=\"%url%\">%text%</a>"},
-					{name:"TiddlyWiki with DateTime",  format:"* %DateTime% [[%text%|%url%]]"},
-					{name:"Twitter",  format:"%text% %isgd%"}
+					{name:"Twitter",     format:"%text% %isgd%"},
+					{name:"TiddlyWiki",  format:"[[%text%|%url%]]"}
 				];
 
 				self.initalize(defaultLinkformData);
