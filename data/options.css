@@ -103,7 +103,7 @@ table.cocoatable input {
 
 .plus-minus-buttons {
     float: left;
-    width: 300px;
+    width: 640px;
     margin-top: 5px;
     font-size: 120%;
 }
@@ -133,7 +133,7 @@ table.cocoatable input {
 
 .up-down-buttons {
     float: left;
-    width: 300px;
+    width: 100px;
     margin-top: 5px;
     font-size: 120%;
 }
@@ -161,8 +161,27 @@ table.cocoatable input {
 /* -- etc-buttons -- */
 
 .etc-buttons {
+    clear: left;
+    padding: 10px 0px 0px 0px; 
+}
+
+.etc-button {
+    width: 150px;
+}
+
+#restore-button-div {
     float: left;
-    width: 200px;
+    width: 250px;
+}
+
+#import-button-div {
+    float: left;
+    width: 250px;
+}
+
+#export-button-div {
+    float: left;
+    width: 250px;
 }
 
 /* Variables */
@@ -175,5 +194,12 @@ table.cocoatable input {
 
 .variables dd {
     margin-bottom: 0.5em;
+}
+
+/* contents-background */
+
+.contents-background {
+    background: #FEFCF6;
+    padding: 10px 7px;
 }
 

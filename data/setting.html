@@ -9,6 +9,8 @@
 
 <body>
   <h1>Formats</h1>
+    
+  <div class="contents-background">
   <div id="table-container">
     <div id="table-main">
       <table id="cocoatable" class="cocoatable"> 
@@ -36,33 +38,50 @@
         <div style="clear:both"><!-- --></div> 
       </div>
       <div class="etc-buttons" id="button-etc">
-        <button id="restore-button">Restore Setting</button>
-<!--         <div style="clear:both"><\!-- -\-></div>  -->
+        <div id="import-button-div"><button id="import-button" class="etc-button">Import from clipboard</button></div>
+        <div id="export-button-div"><button id="export-button" class="etc-button">Export from clipboard</button></div>
+        <div id="restore-button-div"><button id="restore-button" class="etc-button">Restore Setting</button></div>
+        <div style="clear:both"><!-- --></div>
       </div>
     </div>
   </div>
 
-  <br>
-  <br>
+  </div>
+  
+  <h1>Recommended Linkform</h1>
+  <div class="contents-background">
+  <p>Copy to clipboard, and "Import from clipboard" click.</p>
+
+  <table>
+    <tr class="recommended-raw"><td><span>Plain text</span></td><td><span>%text%\n%url%</span></td></tr>
+    <tr class="recommended-raw"><td><span>HTML</span></td><td><span>&lt;a href="%url%"&gt;%text%&lt;/a&gt;</span></td></tr>
+    <tr class="recommended-raw"><td><span>Twitter</span></td><td><span>%text% %isgd%</span></td></tr>
+  </table>
+  </div>
 
   <h1>Manual</h1>
   <h2>Keyboard ShortCuts</h2>
   <h3>Create Link (copy to clipboard).</h3>
+  <div class="contents-background">
   <dl id="dl-shortcuts-create" class="variables">
     <dt>Ctrl+C</dt>
     <dd>Create link.</dd>
     <dt>Ctrl+Shift+C</dt>
     <dd>Selected text to %text% and Create link. </dd>
   </dl>
+  </div>
 
   <h3>Select Linkform</h3>
+  <div class="contents-background">
   <dl id="dl-shortcuts-select" class="variables">
-    <dt>"1", "2", "3", ... "9"</dt>
+    <dt>"1", "2", "3", ... "9", "0"</dt>
     <dd>Direct select.</dd>
   </dl>
+  </div>
 
   <h2>Variables</h2>
   <h3>Basic</h3>
+  <div class="contents-background">
   <dl id="dl-variables" class="variables">
     <dt>%text%</dt>
     <dd>Page title or selected text.</dd>
@@ -73,16 +92,20 @@
     <dt>%isgd%</dt>
     <dd>Shorten URL, from http://is.gd .</dd>
   </dl>
+  </div>
 
   <h3>Special</h3>
+  <div class="contents-background">
   <dl id="dl-variables" class="variables">
     <dt>\n</dt>
     <dd>Enter.</dd>
     <dt>\t</dt>
     <dd>Tab.</dd>
   </dl>
+  </div>
 
   <h3>Date & Time</h3>
+  <div class="contents-background">
   <dl id="dl-variables" class="variables">
     <dt>%date%</dt>
     <dd>2011/03/04</dd>
@@ -103,6 +126,7 @@
     <dt>%min%</dt>
     <dd>06</dd>
   </dl>
+  </div>
   
 </body>
 
