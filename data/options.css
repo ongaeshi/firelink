@@ -3,7 +3,9 @@
 body {
     /* background-color: #ffffff; */
     /* background-color: #F5F5F5; */
-    background-color: #E8F6FE;
+    /* background-color: #E8F6FE; */
+    background-color: #E0EFFD;
+    
     font: 100% arial, helvetica, sans-serif;
 }
 
@@ -34,6 +36,8 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
     background-color: #FFFFFF;
+/*     background-color: #E8F6FE; */
+/*     background-color: #F0F8FF; */
 }
 
 thead td {
@@ -113,7 +117,8 @@ table.cocoatable input {
     height: 1em;
     border: 1px solid #666;
     text-align: center;
-    background-color: #FFFFFF;
+/*     background-color: #FFFFFF; */
+    background-color: #F6F6F6;
 }
 
 .plus-minus-buttons .button:active {
@@ -143,7 +148,8 @@ table.cocoatable input {
     height: 1em;
     border: 1px solid #666;
     text-align: center;
-    background-color: #FFFFFF;
+/*     background-color: #FFFFFF; */
+    background-color: #F6F6F6;
 }
 
 .up-down-buttons .button:active {
@@ -199,7 +205,8 @@ table.cocoatable input {
 /* contents-background */
 
 .contents-background {
-    background: #FEFCF6;
+/*     background: #FEFCF6; */
+    background: #FFFFFF; 
     padding: 10px 7px;
 }
 
