@@ -60,6 +60,11 @@ function onKeyDown(event) {
   if (49 <= event.keyCode && event.keyCode <= 57) {
     postMessage({kind: 'select', index: event.keyCode - 49});
   }
+
+  // 0
+  if (48 == event.keyCode) {
+    postMessage({kind: 'select', index: 9});
+  }
 }
 
 document.addEventListener("keydown", onKeyDown, true);
