@@ -1,3 +1,11 @@
+# 0.9 Working in Progress
+
+後で英語に変換
+
+* "All Tabs Space" -> "All Tabs Separate"
+* 選択したテキストは改行を全て空白に変換する
+* ショートカットキー、キー0も対応する
+
 # 0.8 2011/04/30
 
 * "All Tabs" command can be chosen linkform.
