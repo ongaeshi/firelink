@@ -38,11 +38,18 @@ function test_isgd(test) {
 function test_copyLinkAndNotify(test) {
   let linkdata = {text: "YAAOO!! JIPAN", title: "YAAOO!! JIPAN", url: "http://www.example.jp"};
   
-  fl.copyLinkAndNotify("DUMMY", "%text%\n%url%", linkdata);
+  fl.copyLinkAndNotify("DUMMY", "%text%\\n%url%", linkdata);
   test.assertEqual("YAAOO!! JIPAN\nhttp://www.example.jp", clipboard.get());
 
   fl.copyLinkAndNotify("DUMMY2", "<a href=\"%url%\">%text%</a>", linkdata);
   test.assertEqual("<a href=\"http://www.example.jp\">YAAOO!! JIPAN</a>", clipboard.get());
+}
+
+function test_createText(test) {
+  let linkform = "%text%\\n%url%";
+  let linkdata = {text: "aaa\nbbb\nccc", title: "", url: "http://www.example.jp"};
+  
+  test.assertEqual("aaa bbb ccc\nhttp://www.example.jp", fl.createText(linkform, linkdata));
 }
 
 exports.test_test_run = function(test) {
@@ -60,6 +67,9 @@ exports.test_test_run = function(test) {
 
   fl.changeLinkform("[[%text%|%url%]]");
   test.assertEqual(3, fl.currentIndex());
+
+  // 
+  test_createText(test);
 
 };
 

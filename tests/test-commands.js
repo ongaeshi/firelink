@@ -18,10 +18,10 @@ exports.test_commands = function(test) {
   test.assertEqual("TEXT\nhttp://www.example.jp", clipboard.get());
 
   // 全てのタブをリンク
-  commands.allTabs("DUMMY", "%text%\n%url%");
+  commands.allTabs("DUMMY", "%text%\\n%url%");
   test.assertEqual("\nabout:blank\n", clipboard.get());
   
-  commands.allTabsSpace("DUMMY", "%text%\n%url%");
+  commands.allTabsSpace("DUMMY", "%text%\\n%url%");
   test.assertEqual("\nabout:blank\n\n", clipboard.get());
 
   // リンク種類を直接設定
