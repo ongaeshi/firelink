@@ -46,7 +46,7 @@ exports.test_commands = function(test) {
   test.assertEqual(text, clipboard.get());
 
   // Import
-  commands.importFromClipboard();
+  // commands.importFromClipboard();
 };
 
 
