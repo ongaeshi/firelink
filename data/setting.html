@@ -50,13 +50,41 @@
   
   <h1>Recommended Linkform</h1>
   <div class="contents-background">
-  <p>Copy to clipboard, and "Import from clipboard" click.</p>
+  <p>Copy to clipboard (Ctrl + C), and "Import from clipboard" click.</p>
 
+  <h4>Basic</h4>
   <table>
-    <tr class="recommended-raw"><td><span>Plain text</span></td><td><span>%text%\n%url%</span></td></tr>
-    <tr class="recommended-raw"><td><span>HTML</span></td><td><span>&lt;a href="%url%"&gt;%text%&lt;/a&gt;</span></td></tr>
-    <tr class="recommended-raw"><td><span>Twitter</span></td><td><span>%text% %isgd%</span></td></tr>
+      <tr class="recommended-raw"><td><span>PlainText</span></td><td><span>%text%\n%url%</span></td></tr>
+      <tr class="recommended-raw"><td><span>Twitter</span></td><td><span>%text% %isgd%</span></td></tr>
   </table>
+  <h4>HTML</h4>
+  <table>
+      <tr class="recommended-raw"><td><span>HTML</span></td><td><span>&lt;a href=&quot;%url%&quot;&gt;%text%&lt;/a&gt;</span></td></tr>
+      <tr class="recommended-raw"><td><span>HTML(list)</span></td><td><span>&lt;li&gt;&lt;a href=&quot;%url%&quot;&gt;%text%&lt;/a&gt;</span></td></tr>
+      <tr class="recommended-raw"><td><span>HTML(img)</span></td><td><span>&lt;a href=&quot;%url%&quot;&gt;&lt;img src=&quot;&quot; alt=&quot;%title%&quot;&gt;&lt;/a&gt;</span></td></tr>
+      <tr class="recommended-raw"><td><span>DTDD</span></td><td><span>&lt;dt&gt;&lt;a href=&quot;%url%&quot;&gt;%title%&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;%text%&lt;/dd&gt;</span></td></tr>
+  </table>
+  <h4>TiddlyWiki</h4>
+  <table>
+      <tr class="recommended-raw"><td><span>TiddlyWiki</span></td><td><span>[[%text%|%url%]]</span></td></tr>
+      <tr class="recommended-raw"><td><span>TiddlyWiki(list)</span></td><td><span>* [[%text%|%url%]]</span></td></tr>
+      <tr class="recommended-raw"><td><span>TiddlyWiki with DateTime</span></td><td><span>* %DateTime% [[%text%|%url%]]</span></td></tr>
+  </table>
+  <h4>hatena</h4>
+  <table>
+      <tr class="recommended-raw"><td><span>hatena</span></td><td><span>[%url%:title=%text%]</span></td></tr>
+      <tr class="recommended-raw"><td><span>hatena(list)</span></td><td><span>- [%url%:title=%text%]</span></td></tr>
+  </table>
+  <h4>Pukiwiki</h4>
+  <table>
+      <tr class="recommended-raw"><td><span>Pukiwiki</span></td><td><span>[[%text%&gt;%url%]]</span></td></tr>
+      <tr class="recommended-raw"><td><span>Pukiwiki(list)</span></td><td><span>- [[%text%&gt;%url%]]</span></td></tr>
+  </table>
+  <h4>Markdown</h4>
+  <table>
+      <tr class="recommended-raw"><td><span>Markdown</span></td><td><span>[%text%](%url%)</span></td></tr>
+  </table>
+
   </div>
 
   <h1>Manual</h1>
