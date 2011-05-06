@@ -72,23 +72,36 @@ exports.test_test_run = function(test) {
   test_createText(test);
 
   // json2Text
-  let json = [
-    {name:"PlainText",   format:"%text%\\n%url%"},
-    {name:"HTML",        format:"<a href=\"%url%\">%text%</a>"},
-    {name:"Twitter",     format:"%text% %isgd%"},
-    {name:"TiddlyWiki",  format:"[[%text%|%url%]]"}
-  ];
+  {
+    let json = [
+      {name:"PlainText",   format:"%text%\\n%url%"},
+      {name:"HTML",        format:"<a href=\"%url%\">%text%</a>"},
+      {name:"Twitter",     format:"%text% %isgd%"},
+      {name:"TiddlyWiki",  format:"[[%text%|%url%]]"}
+    ];
 
-  let text =
-    "PlainText\t%text%\\n%url%\n" +
-    "HTML\t<a href=\"%url%\">%text%</a>\n" +
-    "Twitter\t%text% %isgd%\n" +
-    "TiddlyWiki\t[[%text%|%url%]]\n";
+    let text =
+      "PlainText\t%text%\\n%url%\n" +
+      "HTML\t<a href=\"%url%\">%text%</a>\n" +
+      "Twitter\t%text% %isgd%\n" +
+      "TiddlyWiki\t[[%text%|%url%]]\n";
 
-  test.assertEqual(fl.json2Text(json), text);
+    test.assertEqual(fl.json2Text(json), text);
+    test.assertEqual(JSON.stringify(fl.text2JSON(text)), JSON.stringify(json));
+  }
 
-  // text2JSON
-  test.assertEqual(JSON.stringify(fl.text2JSON(text)), JSON.stringify(json));
+  // patten2
+  {
+    let json = [
+      {name:"HTML",        format:"<a href=\"%url%\">%text%</a>"},
+      {name:"PlainText",   format:"%text%\\n%url%"},
+    ];
 
+    let text =
+      "HTML\t<a href=\"%url%\">%text%</a>\n" + 
+      "PlainText\t%text%\\n%url%\n";
+
+    test.assertEqual(JSON.stringify(fl.text2JSON(text)), JSON.stringify(json));
+  }
 };
 
