@@ -516,7 +516,8 @@ try	{
 			this._listener.onPushButton(msg);
 	}
 	CocoaTable.prototype.importData = function (data) {
-	    dumpObj(data);
+		this.initalize(data);
+		this.updated();
 	}
 
 
