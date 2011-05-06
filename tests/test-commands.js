@@ -36,9 +36,17 @@ exports.test_commands = function(test) {
   commands.setLinkFormIndex(500);
   test.assertEqual(3, fl.currentIndex());
 
-  // Import, Export
+  // Export
   commands.exportFromClipboard();
-  test.assertEqual("[{\"name\":\"PlainText\",\"format\":\"%text%\\\\n%url%\"},{\"name\":\"HTML\",\"format\":\"<a href=\\\"%url%\\\">%text%</a>\"},{\"name\":\"Twitter\",\"format\":\"%text% %isgd%\"},{\"name\":\"TiddlyWiki\",\"format\":\"[[%text%|%url%]]\"}]", clipboard.get());
+  let text =
+    "PlainText\t%text%\\n%url%\n" +
+    "HTML\t<a href=\"%url%\">%text%</a>\n" +
+    "Twitter\t%text% %isgd%\n" +
+    "TiddlyWiki\t[[%text%|%url%]]\n";
+  test.assertEqual(text, clipboard.get());
+
+  // Import
+  commands.importFromClipboard();
 };
 
 
