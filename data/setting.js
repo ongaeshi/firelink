@@ -11,7 +11,11 @@ self.on('message', function(linkformData) {
     ctable = new CocoaTable(linkformData, ['name', 'format']);
       
     ctable._listener.onUpdated = function () {
-      postMessage(ctable.to_json());
+      postMessage({kind: "update", data: ctable.to_json()});
+    }
+
+    ctable._listener.onPushButton = function (msg) {
+      postMessage({kind: msg});
     }
   }
 });

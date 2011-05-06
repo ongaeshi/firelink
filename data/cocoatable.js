@@ -298,11 +298,9 @@ try	{
 		console.log(str);
 	}
 
-	CocoaTable.prototype.setupEtcButtonHandlers = function () {
-		var restoreButton = document.getElementById('restore-button');
+	function setupRestoreButton(self) {
+ 		var restoreButton = document.getElementById('restore-button');
 
-		var self = this;
-	    
 		restoreButton.addEventListener( 'click', function (ev) {
  			if (confirm('restore setting?')) {
 				// 既存のテーブルは削除
@@ -323,6 +321,31 @@ try	{
  			}
 		}, true);
 	}
+
+    function setupImportButton(self) {
+		var button = document.getElementById('import-button');
+
+		button.addEventListener( 'click', function (ev) {
+			self.updated();
+			self.pushButton("import");
+		}, true);
+	}
+
+    function setupExportButton(self) {
+		var button = document.getElementById('export-button');
+
+		button.addEventListener( 'click', function (ev) {
+			self.updated();
+			self.pushButton("export");
+		}, true);
+	}
+
+	CocoaTable.prototype.setupEtcButtonHandlers = function () {
+		setupRestoreButton(this);
+		setupImportButton(this);
+		setupExportButton(this);
+	}
+
 	CocoaTable.Cell.prototype.element = function () {
 		return this._e;
 	}
@@ -488,4 +511,9 @@ try	{
 		if ( this._listener.onUpdated )
 			this._listener.onUpdated();
 	}
+	CocoaTable.prototype.pushButton = function (msg) {
+		if ( this._listener.onPushButton )
+			this._listener.onPushButton(msg);
+	}
+
 
