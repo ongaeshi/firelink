@@ -190,6 +190,17 @@ table.cocoatable input {
     width: 250px;
 }
 
+#dumper {
+    float:left;
+    width: 500px;
+    color: #FFFFFF;
+}
+
+#clear-button-div {
+    float: left;
+    width: 250px;
+}
+
 /* Variables */
 
 .variables dt {

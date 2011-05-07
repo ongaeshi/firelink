@@ -302,7 +302,7 @@ try	{
  		var restoreButton = document.getElementById('restore-button');
 
 		restoreButton.addEventListener( 'click', function (ev) {
- 			if (confirm('restore setting?')) {
+ 			if (confirm('Restore Setting?')) {
 				// 既存のテーブルは削除
 				var tbody = document.querySelector('.cocoatable tbody');
 				removeChildAll(tbody);
@@ -318,6 +318,28 @@ try	{
 
 				self.initalize(defaultLinkformData);
 				self.updated();
+
+				// 通知
+				self.pushButton("restore");
+ 			}
+		}, true);
+	}
+
+	function setupClearButton(self) {
+ 		var button = document.getElementById('clear-button');
+
+		button.addEventListener( 'click', function (ev) {
+ 			if (confirm('Clear Setting?')) {
+				// 既存のテーブルは削除
+				var tbody = document.querySelector('.cocoatable tbody');
+				removeChildAll(tbody);
+
+				// 初期化
+				self.initalize([]);
+				self.updated();
+
+				// 通知
+				self.pushButton("clear");
  			}
 		}, true);
 	}
@@ -344,6 +366,7 @@ try	{
 		setupRestoreButton(this);
 		setupImportButton(this);
 		setupExportButton(this);
+		setupClearButton(this);
 	}
 
 	CocoaTable.Cell.prototype.element = function () {
