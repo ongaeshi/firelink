@@ -2,6 +2,9 @@
 
 後で英語に変換
 
+* Import & Export
+  * Import from clipboard
+  * Export to clipboard
 * "All Tabs Space" -> "All Tabs Separate"
 * 選択したテキストは改行を全て空白に変換する
 * ショートカットキー、キー0も対応する
