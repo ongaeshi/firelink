@@ -9,6 +9,8 @@
 
 <body>
   <h1>Formats</h1>
+    
+  <div class="contents-background">
   <div id="table-container">
     <div id="table-main">
       <table id="cocoatable" class="cocoatable"> 
@@ -36,33 +38,85 @@
         <div style="clear:both"><!-- --></div> 
       </div>
       <div class="etc-buttons" id="button-etc">
-        <button id="restore-button">Restore Setting</button>
-<!--         <div style="clear:both"><\!-- -\-></div>  -->
+        <div id="import-button-div"><button id="import-button" class="etc-button">Import from clipboard</button></div>
+        <div id="export-button-div"><button id="export-button" class="etc-button">Export to clipboard</button></div>
+        <div id="restore-button-div"><button id="restore-button" class="etc-button">Restore Setting</button></div>
+        <div style="clear:both"><!-- --></div>
+      </div>
+      <div class="etc-buttons" id="button-etc">
+        <div id="dumper">-</div>
+        <div id="clear-button-div"><button id="clear-button" class="etc-button">Clear Setting</button></div>
+        <div style="clear:both"><!-- --></div>
       </div>
     </div>
   </div>
 
-  <br>
-  <br>
+  </div>
+  
+  <h1>Recommended Linkform</h1>
+  <div class="contents-background">
+  <p>Copy to clipboard (Ctrl + C), and <img src="import_button.jpg" alt="Import from clipboard" align="top" /> button click.</p>
+
+  <h4>Basic</h4>
+  <table>
+      <tr class="recommended-raw"><td><span>PlainText</span></td><td><span>%text%\n%url%</span></td></tr>
+      <tr class="recommended-raw"><td><span>Twitter</span></td><td><span>%text% %isgd%</span></td></tr>
+  </table>
+  <h4>HTML</h4>
+  <table>
+      <tr class="recommended-raw"><td><span>HTML</span></td><td><span>&lt;a href=&quot;%url%&quot;&gt;%text%&lt;/a&gt;</span></td></tr>
+      <tr class="recommended-raw"><td><span>HTML(list)</span></td><td><span>&lt;li&gt;&lt;a href=&quot;%url%&quot;&gt;%text%&lt;/a&gt;</span></td></tr>
+      <tr class="recommended-raw"><td><span>HTML(img)</span></td><td><span>&lt;a href=&quot;%url%&quot;&gt;&lt;img src=&quot;&quot; alt=&quot;%title%&quot;&gt;&lt;/a&gt;</span></td></tr>
+      <tr class="recommended-raw"><td><span>DTDD</span></td><td><span>&lt;dt&gt;&lt;a href=&quot;%url%&quot;&gt;%title%&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;%text%&lt;/dd&gt;</span></td></tr>
+  </table>
+  <h4>TiddlyWiki</h4>
+  <table>
+      <tr class="recommended-raw"><td><span>TiddlyWiki</span></td><td><span>[[%text%|%url%]]</span></td></tr>
+      <tr class="recommended-raw"><td><span>TiddlyWiki(list)</span></td><td><span>* [[%text%|%url%]]</span></td></tr>
+      <tr class="recommended-raw"><td><span>TiddlyWiki with DateTime</span></td><td><span>* %DateTime% [[%text%|%url%]]</span></td></tr>
+  </table>
+  <h4>hatena</h4>
+  <table>
+      <tr class="recommended-raw"><td><span>hatena</span></td><td><span>[%url%:title=%text%]</span></td></tr>
+      <tr class="recommended-raw"><td><span>hatena(list)</span></td><td><span>- [%url%:title=%text%]</span></td></tr>
+  </table>
+  <h4>Pukiwiki</h4>
+  <table>
+      <tr class="recommended-raw"><td><span>Pukiwiki</span></td><td><span>[[%text%&gt;%url%]]</span></td></tr>
+      <tr class="recommended-raw"><td><span>Pukiwiki(list)</span></td><td><span>- [[%text%&gt;%url%]]</span></td></tr>
+  </table>
+  <h4>Markdown</h4>
+  <table>
+      <tr class="recommended-raw"><td><span>Markdown</span></td><td><span>[%text%](%url%)</span></td></tr>
+  </table>
+
+  </div>
 
   <h1>Manual</h1>
   <h2>Keyboard ShortCuts</h2>
   <h3>Create Link (copy to clipboard).</h3>
+  <div class="contents-background">
   <dl id="dl-shortcuts-create" class="variables">
     <dt>Ctrl+C</dt>
     <dd>Create link.</dd>
     <dt>Ctrl+Shift+C</dt>
     <dd>Selected text to %text% and Create link. </dd>
+    <dt>Ctrl+X</dt>
+    <dd>Clipboard text to %text% and Create link. </dd>
   </dl>
+  </div>
 
   <h3>Select Linkform</h3>
+  <div class="contents-background">
   <dl id="dl-shortcuts-select" class="variables">
-    <dt>"1", "2", "3", ... "9"</dt>
+    <dt>"1", "2", "3", ... "9", "0"</dt>
     <dd>Direct select.</dd>
   </dl>
+  </div>
 
   <h2>Variables</h2>
   <h3>Basic</h3>
+  <div class="contents-background">
   <dl id="dl-variables" class="variables">
     <dt>%text%</dt>
     <dd>Page title or selected text.</dd>
@@ -73,16 +127,20 @@
     <dt>%isgd%</dt>
     <dd>Shorten URL, from http://is.gd .</dd>
   </dl>
+  </div>
 
   <h3>Special</h3>
+  <div class="contents-background">
   <dl id="dl-variables" class="variables">
     <dt>\n</dt>
     <dd>Enter.</dd>
     <dt>\t</dt>
     <dd>Tab.</dd>
   </dl>
+  </div>
 
   <h3>Date & Time</h3>
+  <div class="contents-background">
   <dl id="dl-variables" class="variables">
     <dt>%date%</dt>
     <dd>2011/03/04</dd>
@@ -103,6 +161,7 @@
     <dt>%min%</dt>
     <dd>06</dd>
   </dl>
+  </div>
   
 </body>
 

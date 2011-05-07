@@ -18,10 +18,10 @@ exports.test_commands = function(test) {
   test.assertEqual("TEXT\nhttp://www.example.jp", clipboard.get());
 
   // 全てのタブをリンク
-  commands.allTabs("DUMMY", "%text%\n%url%");
+  commands.allTabs("DUMMY", "%text%\\n%url%");
   test.assertEqual("\nabout:blank\n", clipboard.get());
   
-  commands.allTabsSpace("DUMMY", "%text%\n%url%");
+  commands.allTabsSpace("DUMMY", "%text%\\n%url%");
   test.assertEqual("\nabout:blank\n\n", clipboard.get());
 
   // リンク種類を直接設定
@@ -35,6 +35,18 @@ exports.test_commands = function(test) {
   test.assertEqual(3, fl.currentIndex());
   commands.setLinkFormIndex(500);
   test.assertEqual(3, fl.currentIndex());
+
+  // Export
+  commands.exportFromClipboard();
+  let text =
+    "PlainText\t%text%\\n%url%\n" +
+    "HTML\t<a href=\"%url%\">%text%</a>\n" +
+    "Twitter\t%text% %isgd%\n" +
+    "TiddlyWiki\t[[%text%|%url%]]\n";
+  test.assertEqual(text, clipboard.get());
+
+  // Import
+  // commands.importFromClipboard();
 };
 
 

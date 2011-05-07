@@ -1,0 +1,25 @@
+! Basic
+PlainText	%text%\n%url%
+Twitter	%text% %isgd%
+
+! HTML
+HTML	<a href="%url%">%text%</a>
+HTML(list)	<li><a href="%url%">%text%</a>
+HTML(img)	<a href="%url%"><img src="" alt="%title%"></a>
+DTDD	<dt><a href="%url%">%title%</a></dt><dd>%text%</dd>
+
+! TiddlyWiki
+TiddlyWiki	[[%text%|%url%]]
+TiddlyWiki(list)	* [[%text%|%url%]]
+TiddlyWiki with DateTime	* %DateTime% [[%text%|%url%]]
+
+! hatena
+hatena	[%url%:title=%text%]
+hatena(list)	- [%url%:title=%text%]
+
+! Pukiwiki
+Pukiwiki	[[%text%>%url%]]
+Pukiwiki(list)	- [[%text%>%url%]]
+
+! Markdown
+Markdown	[%text%](%url%)

@@ -56,9 +56,19 @@ function onKeyDown(event) {
     }
   }
   
+  // Set %text% from Clipboard (Ctrl+X)
+  if (isCtrl(event, window) && event.keyCode == 88/*X*/) {
+    postMessage({kind: 'textFromClipboard', linkdata: linkdata});
+  }
+
   // ダイレクト選択
   if (49 <= event.keyCode && event.keyCode <= 57) {
     postMessage({kind: 'select', index: event.keyCode - 49});
+  }
+
+  // 0
+  if (48 == event.keyCode) {
+    postMessage({kind: 'select', index: 9});
   }
 }
 
