@@ -2,7 +2,7 @@
     "name": "firelink", 
     "license": "MPL 1.1/GPL 2.0/LGPL 2.1", 
     "author": "ongaeshi", 
-    "version": "0.8.1", 
+    "version": "0.9",
     "fullName": "FireLink", 
     "id": "jid0-seIFaYDCkHVDZhihluA8wNSDuU4", 
     "description": "Create custom link text (ex. PlainText, HTML, TiddlyWiki), from shortcut key and context menu."

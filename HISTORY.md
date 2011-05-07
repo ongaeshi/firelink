@@ -1,13 +1,16 @@
-# 0.9 Working in Progress
-
-後で英語に変換
+# 0.9 2011/05/07
 
 * Import & Export
+  * Linkform setting share & backup.
   * Import from clipboard
   * Export to clipboard
-* "All Tabs Space" -> "All Tabs Separate"
-* 選択したテキストは改行を全て空白に変換する
-* ショートカットキー、キー0も対応する
+* Configuration screen redesign.
+* Add "Recommended Linkform" in Setting panel.
+* Add "Set %text% from Clipboard (Ctrl+X)".
+* "Direct Select", "0" key add.
+* The selected text to all line breaks converted to spaces.
+* Add "Clear Setting" button.
+* Typo, "All Tabs Space" -> "All Tabs Separate".
 
 # 0.8 2011/04/30
 
