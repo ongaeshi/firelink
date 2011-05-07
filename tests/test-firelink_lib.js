@@ -103,5 +103,14 @@ exports.test_test_run = function(test) {
 
     test.assertEqual(JSON.stringify(fl.text2JSON(text)), JSON.stringify(json));
   }
+
+  // test
+  test.assertEqual(fl.addPrefix("hoge", 0), "(1) hoge");
+  test.assertEqual(fl.addPrefix("hoge", 1), "(2) hoge");
+  test.assertEqual(fl.addPrefix("hoge", 2), "(3) hoge");
+  test.assertEqual(fl.addPrefix("hoge", 8), "(9) hoge");
+  test.assertEqual(fl.addPrefix("hoge", 9), "(0) hoge");
+  test.assertEqual(fl.addPrefix("hoge", 15), "hoge");
+  
 };
 

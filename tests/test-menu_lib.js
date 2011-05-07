@@ -29,12 +29,5 @@ exports.test_test_run = function(test) {
   test.assertEqual("[[TEXT|http://www.example.jp]]", clipboard.get());
   
   MenuLib.copyTabs(action, linkdata);
-
-  test.assertEqual(MenuLib.addPrefix("hoge", 0), "(1) hoge");
-  test.assertEqual(MenuLib.addPrefix("hoge", 1), "(2) hoge");
-  test.assertEqual(MenuLib.addPrefix("hoge", 2), "(3) hoge");
-  test.assertEqual(MenuLib.addPrefix("hoge", 8), "(9) hoge");
-  test.assertEqual(MenuLib.addPrefix("hoge", 9), "(0) hoge");
-  
 };
 
