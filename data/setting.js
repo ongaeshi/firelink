@@ -19,6 +19,20 @@ self.on('message', function(msg) {
       ctable._listener.onPushButton = function (msg) {
         postMessage({kind: msg});
       }
+
+      {
+        var a = document.getElementById('link_recommended_settings');
+        a.addEventListener('click', function (ev) {
+          postMessage({kind: "tab_open", url:"http://firelink.ongaeshi.me/Recommended_Settings"});
+        }, true);
+      }
+
+      {
+        var a = document.getElementById('link_homepage');
+        a.addEventListener('click', function (ev) {
+          postMessage({kind: "tab_open", url:"http://firelink.ongaeshi.me/"});
+        }, true);
+      }
     }
     break;
     
