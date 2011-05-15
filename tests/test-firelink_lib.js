@@ -50,6 +50,17 @@ function test_createText(test) {
   let linkdata = {text: "aaa\nbbb\nccc", title: "", url: "http://www.example.jp"};
   
   test.assertEqual("aaa bbb ccc\nhttp://www.example.jp", fl.createText(linkform, linkdata));
+
+  linkform = "%text%\\n%basename%";
+  test.assertEqual("aaa bbb ccc\nwww.example.jp", fl.createText(linkform, linkdata)); // 微妙な感じだが害はないので
+
+  linkform = "%text%\\n%basename%";
+  linkdata = {text: "aaa\nbbb\nccc", title: "", url: "http://www.example.jp/example.dat"};
+  test.assertEqual("aaa bbb ccc\nexample.dat", fl.createText(linkform, linkdata));
+
+  linkform = "[[%basename%|%text%]]";
+  linkdata = {text: "世界遺産 - Wikipedia", title: "", url: "http://ja.wikipedia.org/wiki/%E4%B8%96%E7%95%8C%E9%81%BA%E7%94%A3"};
+  test.assertEqual("[[%E4%B8%96%E7%95%8C%E9%81%BA%E7%94%A3|世界遺産 - Wikipedia]]", fl.createText(linkform, linkdata)); // base64エンコーディングが必要
 }
 
 exports.test_test_run = function(test) {
