@@ -51,19 +51,23 @@ function test_createText(test) {
   
   test.assertEqual("aaa bbb ccc\nhttp://www.example.jp", fl.createText(linkform, linkdata));
 
-  linkform = "%text%\\n%basename%";
+  linkform = "%text%\\n%wikiname%";
   test.assertEqual("aaa bbb ccc\nwww.example.jp", fl.createText(linkform, linkdata)); // 微妙な感じだが害はないので
 
-  linkform = "%text%\\n%basename%";
+  linkform = "%text%\\n%wikiname%";
   linkdata = {text: "aaa\nbbb\nccc", title: "", url: "http://www.example.jp/example.dat"};
   test.assertEqual("aaa bbb ccc\nexample.dat", fl.createText(linkform, linkdata));
 
-  linkform = "[[%basename%|%text%]]";
+  linkform = "[[%wikiname%|%text%]]";
   linkdata = {text: "世界遺産 - Wikipedia", title: "", url: "http://ja.wikipedia.org/wiki/%E4%B8%96%E7%95%8C%E9%81%BA%E7%94%A3"};
   test.assertEqual("[[世界遺産|世界遺産 - Wikipedia]]", fl.createText(linkform, linkdata));
 
-  linkform = "[[%basename%]]";
+  linkform = "[[%wikiname%]]";
   test.assertEqual("[[世界遺産]]", fl.createText(linkform, linkdata));
+
+  linkform = "[[%text%>%wikiname%]]";
+  linkdata = {text:"動作実績タイトル", title:"動作実績", url:"http://pukiwiki.cafelounge.net/plus/?%E5%8B%95%E4%BD%9C%E5%AE%9F%E7%B8%BE"};
+  test.assertEqual("[[動作実績タイトル>動作実績]]", fl.createText(linkform, linkdata));
 }
 
 exports.test_test_run = function(test) {
