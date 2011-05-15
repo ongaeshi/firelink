@@ -48,19 +48,18 @@ function onKeyDown(event) {
 
   // リンク生成
   if (isCtrl(event, window) && event.keyCode == 67/*C*/) {
-    if (!isSelected(window)) {
-      self.postMessage({kind: 'redoLink', linkdata: linkdata});
-
-    } else if (event.shiftKey) {
-      self.postMessage({kind: 'redoLink', linkdata: linkdata});
+    if (!event.shiftKey) {
+      if (!isSelected(window)) 
+        self.postMessage({kind: 'redoLink', linkdata: linkdata});      
+        
+    } else {
+      if (!isSelected(window)) 
+        self.postMessage({kind: 'textFromClipboard', linkdata: linkdata});
+      else
+        self.postMessage({kind: 'redoLink', linkdata: linkdata});
     }
   }
   
-  // Set %text% from Clipboard (Ctrl+X)
-  if (isCtrl(event, window) && event.keyCode == 88/*X*/) {
-    self.postMessage({kind: 'textFromClipboard', linkdata: linkdata});
-  }
-
   // ダイレクト選択
   if (49 <= event.keyCode && event.keyCode <= 57) {
     self.postMessage({kind: 'select', index: event.keyCode - 49});
