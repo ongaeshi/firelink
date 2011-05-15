@@ -60,7 +60,10 @@ function test_createText(test) {
 
   linkform = "[[%basename%|%text%]]";
   linkdata = {text: "世界遺産 - Wikipedia", title: "", url: "http://ja.wikipedia.org/wiki/%E4%B8%96%E7%95%8C%E9%81%BA%E7%94%A3"};
-  test.assertEqual("[[%E4%B8%96%E7%95%8C%E9%81%BA%E7%94%A3|世界遺産 - Wikipedia]]", fl.createText(linkform, linkdata)); // base64エンコーディングが必要
+  test.assertEqual("[[世界遺産|世界遺産 - Wikipedia]]", fl.createText(linkform, linkdata));
+
+  linkform = "[[%basename%]]";
+  test.assertEqual("[[世界遺産]]", fl.createText(linkform, linkdata));
 }
 
 exports.test_test_run = function(test) {
