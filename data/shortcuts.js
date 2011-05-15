@@ -49,26 +49,26 @@ function onKeyDown(event) {
   // リンク生成
   if (isCtrl(event, window) && event.keyCode == 67/*C*/) {
     if (!isSelected(window)) {
-      postMessage({kind: 'redoLink', linkdata: linkdata});
+      self.postMessage({kind: 'redoLink', linkdata: linkdata});
 
     } else if (event.shiftKey) {
-      postMessage({kind: 'redoLink', linkdata: linkdata});
+      self.postMessage({kind: 'redoLink', linkdata: linkdata});
     }
   }
   
   // Set %text% from Clipboard (Ctrl+X)
   if (isCtrl(event, window) && event.keyCode == 88/*X*/) {
-    postMessage({kind: 'textFromClipboard', linkdata: linkdata});
+    self.postMessage({kind: 'textFromClipboard', linkdata: linkdata});
   }
 
   // ダイレクト選択
   if (49 <= event.keyCode && event.keyCode <= 57) {
-    postMessage({kind: 'select', index: event.keyCode - 49});
+    self.postMessage({kind: 'select', index: event.keyCode - 49});
   }
 
   // 0
   if (48 == event.keyCode) {
-    postMessage({kind: 'select', index: 9});
+    self.postMessage({kind: 'select', index: 9});
   }
 }
 
