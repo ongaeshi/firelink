@@ -44,6 +44,20 @@ exports.test_locale2 = function(test) {
   notify.n("local2", locale2);
 }
 
+const locale = require("locale");
+
+exports.test_locale3 = function(test) {
+  test.pass("Test Locale3 .....");
+
+  test.assertEqual(locale.get("ja"), "ja");
+  test.assertEqual(locale.get("ja-JP-mac"), "ja");
+  test.assertEqual(locale.get("en"), "en");
+  test.assertEqual(locale.get("en-US"), "en");
+  test.assertEqual(locale.get("tw"), "en"); //未対応
+}
+
+
+
 
 
 
