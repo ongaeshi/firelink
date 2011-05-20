@@ -23,6 +23,7 @@ Install
 
 Manual
 ---------------
+* [Manual - FireLink](http://firelink.ongaeshi.me/Manual)
 
 Reference
 ---------------

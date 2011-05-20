@@ -50,6 +50,38 @@ function test_createText(test) {
   let linkdata = {text: "aaa\nbbb\nccc", title: "", url: "http://www.example.jp"};
   
   test.assertEqual("aaa bbb ccc\nhttp://www.example.jp", fl.createText(linkform, linkdata));
+
+  linkform = "%text%\\n%wikiname%";
+  test.assertEqual("aaa bbb ccc\nwww.example.jp", fl.createText(linkform, linkdata)); // 微妙な感じだが害はないので
+
+  linkform = "%text%\\n%wikiname%";
+  linkdata = {text: "aaa\nbbb\nccc", title: "", url: "http://www.example.jp/example.dat"};
+  test.assertEqual("aaa bbb ccc\nexample.dat", fl.createText(linkform, linkdata));
+
+  linkform = "[[%wikiname%|%text%]]";
+  linkdata = {text: "世界遺産 - Wikipedia", title: "", url: "http://ja.wikipedia.org/wiki/%E4%B8%96%E7%95%8C%E9%81%BA%E7%94%A3"};
+  test.assertEqual("[[世界遺産|世界遺産 - Wikipedia]]", fl.createText(linkform, linkdata));
+
+  linkform = "[[%wikiname%]]";
+  test.assertEqual("[[世界遺産]]", fl.createText(linkform, linkdata));
+
+  linkform = "[[%text%>%wikiname%]]";
+  linkdata = {text:"動作実績タイトル", title:"動作実績", url:"http://pukiwiki.cafelounge.net/plus/?%E5%8B%95%E4%BD%9C%E5%AE%9F%E7%B8%BE"};
+  test.assertEqual("[[動作実績タイトル>動作実績]]", fl.createText(linkform, linkdata));
+
+  // @todo 何とかしたいのだが、このようにURLとWikiNameの境目が分からないものは無理 (例: MediaWiki)
+  //   linkform = "[[%text%>%wikiname%]]";
+  //   linkdata = {text:"Title", title:"", url:"http://www.mediawiki.org/MediaWiki/ja"};
+  //   test.assertEqual("[[Title>MediaWiki/ja]]", fl.createText(linkform, linkdata));
+
+  linkform = "[[%text%>%wikiname%]]";
+  linkdata = {text:"Title", title:"", url:"http://www.mediawiki.org/index.php?ページ名"};
+  test.assertEqual("[[Title>ページ名]]", fl.createText(linkform, linkdata));
+
+  linkform = "[[%text%>%wikiname%]]";
+  linkdata = {text:"PukiWiki/メーリングリスト - PukiWiki-official", title:"PukiWiki/メーリングリスト - PukiWiki-official", url:"http://pukiwiki.sourceforge.jp/?PukiWiki%2F%E3%83%A1%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%AA%E3%82%B9%E3%83%88"};
+  test.assertEqual("[[PukiWiki/メーリングリスト - PukiWiki-official>PukiWiki/メーリングリスト]]", fl.createText(linkform, linkdata));
+
 }
 
 exports.test_test_run = function(test) {

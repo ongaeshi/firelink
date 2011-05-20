@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <title>FireLink Setting</title>
+  <link rel="stylesheet" type="text/css" href="setting.css" />
+  <link rel="stylesheet" type="text/css" href="options.css" />
+</head>
+
+<body>
+  <h1>Formats</h1>
+    
+  <div class="contents-background">
+  <div id="table-container">
+    <div id="table-main">
+      <table id="cocoatable" class="cocoatable"> 
+        <thead> 
+	  <tr> 
+	    <td id="column-name">Name</td> 
+	    <td id="column-format">Format</td> 
+	  </tr> 
+        </thead> 
+        <tbody id="formats">
+         <!-- ダミーデータ、消す予定 -->
+         <!-- 	<tr id="cocoatable-row0" class=" selected"><td><span>Plain text</span></td><td><span>%text%\n%url%\n\n\n</span></td><td><span></span></td></tr><tr id="cocoatable-row1"><td><span>HTML</span></td><td><span>&lt;a href="%url%"&gt;%htmlEscapedText%&lt;/a&gt;</span></td><td><span></span></td></tr><tr id="cocoatable-row2"><td><span>Test</span></td><td><span>[%text%] %url%</span></td><td><span></span></td></tr><tr id="cocoatable-row3"><td><span>T</span></td><td><span>T</span></td><td><span></span></td></tr><tr id="cocoatable-row4"><td><span>a</span></td><td><span>a</span></td><td><span></span></td></tr><tr id="cocoatable-row5"><td><span>dfdfd</span></td><td><span>adf</span></td><td><span></span></td></tr> -->
+        </tbody>
+      </table>
+    </div>
+    <div id="table-footer">
+      <div class="plus-minus-buttons" id="button-container"> 
+        <div id="cocoatable-button-plus" class="button plus">+</div> 
+        <div id="cocoatable-button-minus" class="button minus">-</div> 
+        <div style="clear:both"><!-- --></div> 
+      </div>
+      <div class="up-down-buttons" id="button-updown"> 
+        <div id="cocoatable-button-up" class="button up">^</div> 
+        <div id="cocoatable-button-down" class="button down">v</div> 
+        <div style="clear:both"><!-- --></div> 
+      </div>
+      <div class="etc-buttons" id="button-etc">
+        <div id="import-button-div"><button id="import-button" class="etc-button">Import from clipboard</button></div>
+        <div id="export-button-div"><button id="export-button" class="etc-button">Export to clipboard</button></div>
+        <div id="restore-button-div"><button id="restore-button" class="etc-button">Restore Setting</button></div>
+        <div style="clear:both"><!-- --></div>
+      </div>
+      <div class="etc-buttons" id="button-etc">
+        <div id="dumper">-</div>
+        <div id="clear-button-div"><button id="clear-button" class="etc-button">Clear Setting</button></div>
+        <div style="clear:both"><!-- --></div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  
+  <h1>Recommended Settings</h1>
+  <div class="contents-background">
+  <p>Copy to clipboard (Ctrl + C), and <img src="import_button.jpg" alt="Import from clipboard" align="top" /> button click.</p>
+  <p><a id="link_recommended_settings" href="#">Recommended Settings</a> has many more settings.</p>
+
+  <h4>New!</h4>
+  <table>
+      <tr class="recommended-raw"><td><span>MediaWiki(wiki)</span></td><td><span>[[%wikiname%]]</span></td></tr>
+      <tr class="recommended-raw"><td><span>MediaWiki(wiki,title)</span></td><td><span>[[%wikiname%|%text%]]</span></td></tr>
+  </table>
+  <h4>Basic</h4>
+  <table>
+      <tr class="recommended-raw"><td><span>PlainText</span></td><td><span>%text%\n%url%</span></td></tr>
+      <tr class="recommended-raw"><td><span>Twitter</span></td><td><span>%text% %isgd%</span></td></tr>
+  </table>
+  <h4>HTML</h4>
+  <table>
+      <tr class="recommended-raw"><td><span>HTML</span></td><td><span>&lt;a href=&quot;%url%&quot;&gt;%text%&lt;/a&gt;</span></td></tr>
+      <tr class="recommended-raw"><td><span>HTML(list)</span></td><td><span>&lt;li&gt;&lt;a href=&quot;%url%&quot;&gt;%text%&lt;/a&gt;</span></td></tr>
+      <tr class="recommended-raw"><td><span>HTML(img)</span></td><td><span>&lt;a href=&quot;%url%&quot;&gt;&lt;img src=&quot;&quot; alt=&quot;%title%&quot;&gt;&lt;/a&gt;</span></td></tr>
+      <tr class="recommended-raw"><td><span>DTDD</span></td><td><span>&lt;dt&gt;&lt;a href=&quot;%url%&quot;&gt;%title%&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;%text%&lt;/dd&gt;</span></td></tr>
+  </table>
+  <h4>TiddlyWiki</h4>
+  <table>
+      <tr class="recommended-raw"><td><span>TiddlyWiki</span></td><td><span>[[%text%|%url%]]</span></td></tr>
+      <tr class="recommended-raw"><td><span>TiddlyWiki(list)</span></td><td><span>* [[%text%|%url%]]</span></td></tr>
+      <tr class="recommended-raw"><td><span>TiddlyWiki with DateTime</span></td><td><span>* %DateTime% [[%text%|%url%]]</span></td></tr>
+  </table>
+  <h4>Pukiwiki</h4>
+  <table>
+      <tr class="recommended-raw"><td><span>Pukiwiki</span></td><td><span>[[%text%&gt;%url%]]</span></td></tr>
+      <tr class="recommended-raw"><td><span>Pukiwiki(list)</span></td><td><span>- [[%text%&gt;%url%]]</span></td></tr>
+  </table>
+  </div>
+
+  <h1>Website</h1>
+  <div class="contents-background">
+  <p>Click here for the latest information !!</p>
+  <p><a id="link_homepage" href="#">MainPage - FireLink</a></p>
+  </div>
+
+  <h1>Manual</h1>
+  <h2>Keyboard ShortCuts</h2>
+  <h3>Create Link (copy to clipboard).</h3>
+  <div class="contents-background">
+  <dl id="dl-shortcuts-create" class="variables">
+    <dt>Ctrl+C</dt>
+    <dd>Create link.</dd>
+    <dt>Ctrl+Shift+C</dt>
+    <dd><strong>Selected text</strong> to %text% and Create link. </dd>
+    <dd>If not selected, <strong>Clipboard text</strong> to %text% and Create link. </dd>
+  </dl>
+  </div>
+
+  <h3>Select Linkform</h3>
+  <div class="contents-background">
+  <dl id="dl-shortcuts-select" class="variables">
+    <dt>"1", "2", "3", ... "9", "0"</dt>
+    <dd>Direct select.</dd>
+  </dl>
+  </div>
+
+  <h2>Variables</h2>
+  <h3>Basic</h3>
+  <div class="contents-background">
+  <dl id="dl-variables" class="variables">
+    <dt>%text%</dt>
+    <dd>Page title or selected text.</dd>
+    <dt>%title%</dt>
+    <dd>Page title.</dd>
+    <dt>%url%</dt>
+    <dd>Page URL.</dd>
+    <dt>%isgd%</dt>
+    <dd>Shorten URL, from http://is.gd .</dd>
+    <dt>%wikiname%</dt>
+    <dd>URL to WikiName. <br>"http://en.wikipedia.org/wiki/Main_Page" to "Main_Page"</dd>
+  </dl>
+  </div>
+
+  <h3>Special</h3>
+  <div class="contents-background">
+  <dl id="dl-variables" class="variables">
+    <dt>\n</dt>
+    <dd>Enter.</dd>
+    <dt>\t</dt>
+    <dd>Tab.</dd>
+  </dl>
+  </div>
+
+  <h3>Date & Time</h3>
+  <div class="contents-background">
+  <dl id="dl-variables" class="variables">
+    <dt>%date%</dt>
+    <dd>2011/03/04</dd>
+    <dt>%Date%</dt>
+    <dd>2011-03-04</dd>
+    <dt>%datetime%</dt>
+    <dd>2011/03/04 05:06</dd>
+    <dt>%DateTime%</dt>
+    <dd>2011-03-04 05:06</dd>
+    <dt>%year%</dt>
+    <dd>2011</dd>
+    <dt>%month%</dt>
+    <dd>03</dd>
+    <dt>%day%</dt>
+    <dd>04</dd>
+    <dt>%hour%</dt>
+    <dd>05</dd>
+    <dt>%min%</dt>
+    <dd>06</dd>
+  </dl>
+  </div>
+  
+</body>
+
+</html>

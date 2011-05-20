@@ -1,3 +1,16 @@
+# 1.0 2011/05/20
+
+* Add %wikiname% variable.
+  * URL to WikiName. ("http://en.wikipedia.org/wiki/Main_Page" to "Main_Page")
+* Support Add-on SDK 1.05b.
+* Add Japanese translation.
+* Change Keybind, Clipboard text to %text% and Create link.
+    * "Ctrl + X" -> "Ctrl + Shift + C"
+* Settings panel provide links to "Recommended Settings".
+* Typo
+  * Recommended Linkform -> Recommended Settings
+  * Setting -> Settings. (thanks Rbt)
+
 # 0.9 2011/05/07
 
 * Import & Export

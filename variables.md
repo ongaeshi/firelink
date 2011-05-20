@@ -11,6 +11,8 @@ Variables
   <dd>Page URL.</dd>
   <dt>%isgd%</dt>
   <dd>Shorten URL, from http://is.gd .</dd>
+  <dt>%wikiname%</dt>
+  <dd>URL to WikiName ("http://en.wikipedia.org/wiki/Main_Page" -> "Main_Page").</dd>
 </dl>
 
 ## Special

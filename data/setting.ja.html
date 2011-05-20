@@ -2,13 +2,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-  <title>FireLink Setting</title>
+  <title>FireLink 設定</title>
   <link rel="stylesheet" type="text/css" href="setting.css" />
   <link rel="stylesheet" type="text/css" href="options.css" />
 </head>
 
 <body>
-  <h1>Formats</h1>
+  <h1>フォーマット</h1>
     
   <div class="contents-background">
   <div id="table-container">
@@ -16,8 +16,8 @@
       <table id="cocoatable" class="cocoatable"> 
         <thead> 
 	  <tr> 
-	    <td id="column-name">Name</td> 
-	    <td id="column-format">Format</td> 
+	    <td id="column-name">名前</td> 
+	    <td id="column-format">フォーマット</td> 
 	  </tr> 
         </thead> 
         <tbody id="formats">
@@ -38,14 +38,14 @@
         <div style="clear:both"><!-- --></div> 
       </div>
       <div class="etc-buttons" id="button-etc">
-        <div id="import-button-div"><button id="import-button" class="etc-button">Import from clipboard</button></div>
-        <div id="export-button-div"><button id="export-button" class="etc-button">Export to clipboard</button></div>
-        <div id="restore-button-div"><button id="restore-button" class="etc-button">Restore Setting</button></div>
+        <div id="import-button-div"><button id="import-button" class="etc-button">Import from Clipboard</button></div>
+        <div id="export-button-div"><button id="export-button" class="etc-button">Export to Clipboard</button></div>
+        <div id="restore-button-div"><button id="restore-button" class="etc-button">初期設定に戻す</button></div>
         <div style="clear:both"><!-- --></div>
       </div>
       <div class="etc-buttons" id="button-etc">
         <div id="dumper">-</div>
-        <div id="clear-button-div"><button id="clear-button" class="etc-button">Clear Setting</button></div>
+        <div id="clear-button-div"><button id="clear-button" class="etc-button">設定を空にする</button></div>
         <div style="clear:both"><!-- --></div>
       </div>
     </div>
@@ -53,11 +53,18 @@
 
   </div>
   
-  <h1>Recommended Linkform</h1>
+  <h1>おすすめ設定</h1>
   <div class="contents-background">
-  <p>Copy to clipboard (Ctrl + C), and <img src="import_button.jpg" alt="Import from clipboard" align="top" /> button click.</p>
+  <p>使いたい設定を表から選び、クリップボードにコピーします (Ctrl + C)。</p>
+  <p><img src="import_button.jpg" alt="Import from clipboard" align="top" /> ボタンを押して下さい。</p>
+  <p><a id="link_recommended_settings" href="#">おすすめ設定のページ</a> には、さらにたくさんの設定があります。</p>
 
-  <h4>Basic</h4>
+  <h4>しんさく！！</h4>
+  <table>
+      <tr class="recommended-raw"><td><span>MediaWiki(wiki)</span></td><td><span>[[%wikiname%]]</span></td></tr>
+      <tr class="recommended-raw"><td><span>MediaWiki(wiki,title)</span></td><td><span>[[%wikiname%|%text%]]</span></td></tr>
+  </table>
+  <h4>基本</h4>
   <table>
       <tr class="recommended-raw"><td><span>PlainText</span></td><td><span>%text%\n%url%</span></td></tr>
       <tr class="recommended-raw"><td><span>Twitter</span></td><td><span>%text% %isgd%</span></td></tr>
@@ -75,71 +82,68 @@
       <tr class="recommended-raw"><td><span>TiddlyWiki(list)</span></td><td><span>* [[%text%|%url%]]</span></td></tr>
       <tr class="recommended-raw"><td><span>TiddlyWiki with DateTime</span></td><td><span>* %DateTime% [[%text%|%url%]]</span></td></tr>
   </table>
-  <h4>hatena</h4>
-  <table>
-      <tr class="recommended-raw"><td><span>hatena</span></td><td><span>[%url%:title=%text%]</span></td></tr>
-      <tr class="recommended-raw"><td><span>hatena(list)</span></td><td><span>- [%url%:title=%text%]</span></td></tr>
-  </table>
   <h4>Pukiwiki</h4>
   <table>
       <tr class="recommended-raw"><td><span>Pukiwiki</span></td><td><span>[[%text%&gt;%url%]]</span></td></tr>
       <tr class="recommended-raw"><td><span>Pukiwiki(list)</span></td><td><span>- [[%text%&gt;%url%]]</span></td></tr>
   </table>
-  <h4>Markdown</h4>
-  <table>
-      <tr class="recommended-raw"><td><span>Markdown</span></td><td><span>[%text%](%url%)</span></td></tr>
-  </table>
-
   </div>
 
-  <h1>Manual</h1>
-  <h2>Keyboard ShortCuts</h2>
-  <h3>Create Link (copy to clipboard).</h3>
+  <h1>ホームページ</h1>
+  <div class="contents-background">
+  <p>FireLinkの最新情報はこちら</p>
+  <p><a id="link_homepage" href="#">MainPage - FireLink</a></p>
+  </div>
+
+  <h1>マニュアル</h1>
+  <h2>キーボードショートカット</h2>
+  <h3>リンクの生成 (クリップボードにコピー)</h3>
   <div class="contents-background">
   <dl id="dl-shortcuts-create" class="variables">
     <dt>Ctrl+C</dt>
-    <dd>Create link.</dd>
+    <dd>前回のリンク形式でリンク</dd>
     <dt>Ctrl+Shift+C</dt>
-    <dd>Selected text to %text% and Create link. </dd>
-    <dt>Ctrl+X</dt>
-    <dd>Clipboard text to %text% and Create link. </dd>
+    <dd><strong>選択したテキスト</strong> の内容を %text% に格納し、リンク生成 </dd>
+    <dd>選択されていなければ、<strong>クリップボード</strong>の内容を %text% に格納し、リンク生成 </dd>
   </dl>
   </div>
 
-  <h3>Select Linkform</h3>
+  <h3>リンク形式の選択</h3>
   <div class="contents-background">
   <dl id="dl-shortcuts-select" class="variables">
     <dt>"1", "2", "3", ... "9", "0"</dt>
-    <dd>Direct select.</dd>
+    <dd>指定番号のリンク形式に切り替え</dd>
   </dl>
   </div>
 
-  <h2>Variables</h2>
-  <h3>Basic</h3>
+  <h2>特殊変数</h2>
+  <h3>基本</h3>
   <div class="contents-background">
   <dl id="dl-variables" class="variables">
     <dt>%text%</dt>
-    <dd>Page title or selected text.</dd>
+    <dd>ページタイトルか選択テキスト</dd>
     <dt>%title%</dt>
-    <dd>Page title.</dd>
+    <dd>ページタイトル</dd>
     <dt>%url%</dt>
-    <dd>Page URL.</dd>
+    <dd>ページのURL</dd>
     <dt>%isgd%</dt>
-    <dd>Shorten URL, from http://is.gd .</dd>
+    <dd>短縮URL(http://is.gd を利用)</dd>
+    <dt>%wikiname%</dt>
+    <dd>URLをWikiページ名に変換。<br>"http://ja.wikipedia.org/wiki/メインページ" → "メインページ"</dd>
   </dl>
   </div>
 
-  <h3>Special</h3>
+  <h3>特殊文字</h3>
   <div class="contents-background">
   <dl id="dl-variables" class="variables">
     <dt>\n</dt>
-    <dd>Enter.</dd>
+    <dd>改行</dd>
     <dt>\t</dt>
-    <dd>Tab.</dd>
+    <dd>タブ</dd>
   </dl>
   </div>
 
-  <h3>Date & Time</h3>
+  <h3>日付と時刻</h3>
   <div class="contents-background">
   <dl id="dl-variables" class="variables">
     <dt>%date%</dt>
