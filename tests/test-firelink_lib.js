@@ -143,6 +143,31 @@ exports.test_test_run = function(test) {
   test.assertEqual(fl.addPrefix("hoge", 8), "(9) hoge");
   test.assertEqual(fl.addPrefix("hoge", 9), "(0) hoge");
   test.assertEqual(fl.addPrefix("hoge", 15), "hoge");
+
+  // equalHash
+  test.assert(fl.equalHash({a:"a", b:"b"}, {a:"a", b:"b"}));
+  test.assert(!fl.equalHash({a:"a", b:"b"}, {a:"a", b:"b", c:"c"}));
+  test.assert(fl.equalHash({c:"c", a:"a", b:"b"}, {a:"a", b:"b", c:"c"}));
+  test.assert(!fl.equalHash({a:"a", b:"b", c:"c"}, {a:"a", b:"b"}));
+  test.assert(!fl.equalHash({c:"c", a:"aa", b:"b"}, {a:"a", b:"b", c:"c"}));
+
+  // equalHashArray
+  let a = [
+    {a:"a", b:"b"},
+    {a:"a", b:"b", c:"c"},
+  ];
   
+  let b = [
+    {a:"a", b:"b"},
+    {a:"a", b:"b", c:"c"},
+  ];
+
+  let c = [
+    {a:"a", b:"b", c:"c"},
+    {a:"a", b:"b"},
+  ];
+
+  test.assert(fl.equalHashArray(a, b));
+  test.assert(!fl.equalHashArray(a, c));
 };
 
