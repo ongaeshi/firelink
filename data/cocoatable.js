@@ -196,7 +196,7 @@
 
 		var self = this;
 		plus.addEventListener( 'click', function (ev) {
-try	{
+		try	{
 			if ( self._editingCell ) {
 				self._editingCell.commit();
 				self._editingCell = null;
@@ -213,13 +213,20 @@ try	{
 			console.log(e)
 		}
 		}, true);
+
 		minus.addEventListener( 'click', function (ev) {
 			if ( self._selectedRow == null )
 				return;
 			
-			//var id = self._selectedRow.getAttribute('id');
+			var index = self.selectedIndex();
 			self._selectedRow.parentNode.removeChild(self._selectedRow);
-			self.setSelectedRow(null);
+
+			var rows = document.querySelectorAll('.cocoatable tbody tr');
+
+			if (index < rows.length)
+				self.setSelectedRow(rows[index]);
+			else
+				self.setSelectedRow(null);				
 
 			self.updated();
 
