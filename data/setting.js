@@ -12,10 +12,6 @@ self.on('message', function(msg) {
     if (ctable == null) {
       ctable = new CocoaTable(msg.data, ['name', 'format']);
       
-      ctable._listener.onUpdated = function () {
-        self.postMessage({kind: "update", data: ctable.to_json()});
-      }
-
       ctable._listener.onPushButton = function (msg) {
         self.postMessage({kind: msg});
       }
@@ -38,6 +34,10 @@ self.on('message', function(msg) {
     
    case "import":
     ctable.importData(msg.data);
+    break;
+
+   case "save":
+    self.postMessage({kind: "save", data: ctable.to_json()});
     break;
   }
 });
