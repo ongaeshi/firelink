@@ -231,9 +231,8 @@ try	{
 	CocoaTable.prototype.selectedIndex = function () {
 		var rows = document.querySelectorAll('.cocoatable tbody tr');
 		
-		var id = this._selectedRow.getAttribute('id');
 		for (var i = 0; i < rows.length; i++ ) {
-			if (rows[i].getAttribute('id') == id)
+			if (_classHash(rows[i]).selected)
 				return i;
 		}
 	}
