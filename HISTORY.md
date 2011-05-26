@@ -1,3 +1,12 @@
+# 1.1 2011/05/27
+
+* Optimize of settings panel.
+* Settings panel change save timing.
+  * When the panel is closed.
+  * Only when there are changes to save data.
+* Add menu, "Disable Direct Select".
+* Settings panel "No." add a column.
+
 # 1.0 2011/05/20
 
 * Add %wikiname% variable.
