@@ -6,6 +6,7 @@
   * Only when there are changes to save data.
 * Add menu, "Disable Direct Select".
 * Settings panel "No." add a column.
+* Ctrl+1,2,..9,0, direct select not activate when.
 
 # 1.0 2011/05/20
 
