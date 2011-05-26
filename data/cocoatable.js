@@ -91,7 +91,7 @@
 		this._cellObjects = [];
 		this._editingCell = null;
 		this._selectedRow = null;
-		this._index2name = headers;
+		this._index2name = ['no'].concat(headers);
 		this._listener = {};
 
 		this._table = document.getElementById('cocoatable');
@@ -135,17 +135,7 @@
 		}, false);
 	}
 	CocoaTable.prototype.serialize = function () {
-		var self = this;
-		var rows = document.querySelectorAll('.cocoatable tbody tr');
-		var a = $A(rows).map( function(row) {
-			var columns = row.querySelectorAll('td');
-			return $A(columns).reduce( function(j, i, index) {
-				var t = $T(i);
-				j[ self._index2name[index] ] = t;
-				return j;
-			}, {} );
-		} );
-		return JSON.stringify(a);
+		return JSON.stringify(this.to_json());
 	}
 	CocoaTable.prototype.to_json = function () {
 		var self = this;
@@ -520,9 +510,10 @@
 
 	CocoaTable.prototype.initalize = function (formats) {
 		var self = this;
-			formats.map( function (n, i) {
-				self.addRow.apply(self, [n, i], false);
-			} );
+		formats.map( function (n, i) {
+			self.addRow.apply(self, [n, i], false);
+		} );
+		this.updateNo();
 	}
 	CocoaTable.prototype.unselectRow = function () {
 		this.setSelectedRow(null);
@@ -537,8 +528,24 @@
 		this._editingCell = cell;
 	}
 	CocoaTable.prototype.updated = function () {
+		this.updateNo();
+
 		if ( this._listener.onUpdated )
 			this._listener.onUpdated();
+	}
+	function getNo(index) {
+		if (index <= 8)
+			return index + 1;
+		else if (index == 9)
+			return "0";
+		else
+			return "";
+	}
+	CocoaTable.prototype.updateNo = function () {
+		var rows = document.querySelectorAll('.cocoatable tbody tr');
+		for (var i = 0; i < rows.length; i++ ) {
+			rows[i].querySelector('td').innerHTML = "<span>" + getNo(i) + "</span>";
+		}
 	}
 	CocoaTable.prototype.pushButton = function (msg) {
 		if ( this._listener.onPushButton )
