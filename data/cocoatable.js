@@ -124,15 +124,19 @@
 		if ( opts.editing ) {
 			this.open();
 		}
-	
-		var self = this;
-		this._e.addEventListener( 'click', function (ev) {
-			try{
-				self.open();
-				ev.preventDefault();
-				ev.stopPropagation();
-			} catch(e) { console.log(e)}
-		}, false);
+
+		if ( opts.fixed ) {
+			addClass(this._e , 'fixed');
+		} else {
+			var self = this;
+			this._e.addEventListener( 'click', function (ev) {
+				try{
+					self.open();
+					ev.preventDefault();
+					ev.stopPropagation();
+				} catch(e) { console.log(e)}
+			}, false);
+		}
 	}
 	CocoaTable.prototype.serialize = function () {
 		return JSON.stringify(this.to_json());
@@ -468,11 +472,17 @@
 			if ( index > 0 )
 				editing = false;
 
+			var fixed = false;
+
+			if (columnName == 'no')
+				fixed = true;
+
 			var cell = new CocoaTable.Cell( {
 				id: "cocoatable-cell-" + columnName + "-"+ suffixId,
 				text: def[columnName] || '',
 				editing: editing,
-				listener: self
+				listener: self,
+				fixed: fixed
 			} );
 			row.appendChild(cell.element());
 			self._cellObjects.push( {

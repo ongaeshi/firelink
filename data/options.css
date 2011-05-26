@@ -60,6 +60,11 @@ tbody td {
     padding: 4px;
 }
 
+tbody td.fixed {
+    text-align: center;
+}
+
+
 /* -- table -- */
 
 #table-container {
@@ -67,6 +72,11 @@ tbody td {
 }
 
 /* -- table-main -- */
+
+#column-no {
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
 #column-name {
     width: 100px;
@@ -83,6 +93,10 @@ tbody td {
   */
 table.cocoatable tbody tr.selected {
     background: rgb(161,197,255);
+}
+
+table.cocoatable tbody tr.selected td.fixed {
+    background: white;
 }
 
 table.cocoatable td.editing {
