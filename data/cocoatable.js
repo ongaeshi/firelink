@@ -468,14 +468,10 @@
 		
 		var self = this;
 		var siblings = this._index2name.map( function (columnName, index) {
-
-			if ( index > 0 )
-				editing = false;
-
 			var cell = new CocoaTable.Cell( {
 				id: "cocoatable-cell-" + columnName + "-"+ suffixId,
 				text: def[columnName] || '',
-				editing: editing,
+				editing: (index == 1) ? editing : false,
 				listener: self,
 				td_no: columnName == 'no'
 			} );
