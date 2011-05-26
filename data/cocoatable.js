@@ -125,8 +125,8 @@
 			this.open();
 		}
 
-		if ( opts.fixed ) {
-			addClass(this._e , 'fixed');
+		if ( opts.td_no ) {
+			addClass(this._e , 'td-no');
 		} else {
 			var self = this;
 			this._e.addEventListener( 'click', function (ev) {
@@ -472,17 +472,12 @@
 			if ( index > 0 )
 				editing = false;
 
-			var fixed = false;
-
-			if (columnName == 'no')
-				fixed = true;
-
 			var cell = new CocoaTable.Cell( {
 				id: "cocoatable-cell-" + columnName + "-"+ suffixId,
 				text: def[columnName] || '',
 				editing: editing,
 				listener: self,
-				fixed: fixed
+				td_no: columnName == 'no'
 			} );
 			row.appendChild(cell.element());
 			self._cellObjects.push( {

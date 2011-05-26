@@ -60,7 +60,7 @@ tbody td {
     padding: 4px;
 }
 
-tbody td.fixed {
+tbody td.td-no {
     text-align: center;
 }
 
@@ -95,7 +95,7 @@ table.cocoatable tbody tr.selected {
     background: rgb(161,197,255);
 }
 
-table.cocoatable tbody tr.selected td.fixed {
+table.cocoatable tbody tr.selected td.td-no {
     background: white;
 }
 
