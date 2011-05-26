@@ -141,7 +141,7 @@
 			var columns = row.querySelectorAll('td');
 			return $A(columns).reduce( function(j, i, index) {
 				var t = $T(i);
-				j[ self._index2name[index] ] = t;
+				j[ self._index2name[index-1] ] = t;
 				return j;
 			}, {} );
 		} );
@@ -154,7 +154,7 @@
 			var columns = row.querySelectorAll('td');
 			return $A(columns).reduce( function(j, i, index) {
 				var t = $T(i);
-				j[ self._index2name[index] ] = t;
+				j[ self._index2name[index-1] ] = t;
 				return j;
 			}, {} );
 		} );
@@ -473,8 +473,24 @@
 		var row = document.createElement('tr');
 		
 		var self = this;
-		var siblings = this._index2name.map( function (columnName, index) {
+		var siblings = [];
 
+		{
+			var cell = new CocoaTable.Cell( {
+				id: "cocoatable-cell-" + "no" + "-"+ suffixId,
+				text: "",
+				editing: editing,
+				listener: self
+			} )
+			row.appendChild(cell.element());
+			self._cellObjects.push( {
+				cellObject: cell,
+				boundElement: cell._e
+			} );
+			siblings.push(cell);
+		}
+
+		var s = this._index2name.map( function (columnName, index) {
 			if ( index > 0 )
 				editing = false;
 
@@ -491,6 +507,8 @@
 			} );
 			return cell;
 		} );
+
+		siblings = siblings.concat(s);
 
 		siblings.map( function (i) {
 			i.siblingCells = siblings;
@@ -520,9 +538,10 @@
 
 	CocoaTable.prototype.initalize = function (formats) {
 		var self = this;
-			formats.map( function (n, i) {
-				self.addRow.apply(self, [n, i], false);
-			} );
+		formats.map( function (n, i) {
+			self.addRow.apply(self, [n, i], false);
+		} );
+		self.updateNo();
 	}
 	CocoaTable.prototype.unselectRow = function () {
 		this.setSelectedRow(null);
@@ -537,8 +556,28 @@
 		this._editingCell = cell;
 	}
 	CocoaTable.prototype.updated = function () {
+		// 番号ふり直し
+		this.updateNo();
+		
+		// コールバック
 		if ( this._listener.onUpdated )
 			this._listener.onUpdated();
+	}
+
+	function getNo(index) {
+		if (index <= 8)
+			return index + 1;
+		else if (index == 9)
+			return "0";
+		else
+			return "";
+	}
+
+	CocoaTable.prototype.updateNo = function () {
+		var rows = document.querySelectorAll('.cocoatable tbody tr');
+		for (var i = 0; i < rows.length; i++ ) {
+			rows[i].querySelector('td').innerHTML = "<span>" + getNo(i) + "</span>";
+		}
 	}
 	CocoaTable.prototype.pushButton = function (msg) {
 		if ( this._listener.onPushButton )
