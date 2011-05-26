@@ -61,13 +61,16 @@ function onKeyDown(event) {
   }
   
   // ダイレクト選択
-  if (49 <= event.keyCode && event.keyCode <= 57) {
-    self.postMessage({kind: 'select', index: event.keyCode - 49});
-  }
+  if (!isCtrl(event, window) && !event.shiftKey && !event.altKey) {
+    // 1..9
+    if (49 <= event.keyCode && event.keyCode <= 57) {
+      self.postMessage({kind: 'select', index: event.keyCode - 49});
+    }
 
-  // 0
-  if (48 == event.keyCode) {
-    self.postMessage({kind: 'select', index: 9});
+    // 0
+    if (48 == event.keyCode) {
+      self.postMessage({kind: 'select', index: 9});
+    }
   }
 }
 
