@@ -82,6 +82,10 @@ function test_createText(test) {
   linkdata = {text:"PukiWiki/メーリングリスト - PukiWiki-official", title:"PukiWiki/メーリングリスト - PukiWiki-official", url:"http://pukiwiki.sourceforge.jp/?PukiWiki%2F%E3%83%A1%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%AA%E3%82%B9%E3%83%88"};
   test.assertEqual("[[PukiWiki/メーリングリスト - PukiWiki-official>PukiWiki/メーリングリスト]]", fl.createText(linkform, linkdata));
 
+  linkform = "[[%text%>%wikiname%]]";
+  linkdata = {text:"ネットワークプリンタ", title:"ネットワークプリンタ", url:"http://example.com/index.php?%A5%CD%A5%C3%A5%C8%A5%EF%A1%BC%A5%AF%A5%C6%A5%B9%A5%C8"};
+  // 今の所、EUC-JPはエンコードに失敗する
+  test.assertEqual("[[ネットワークプリンタ>%A5%CD%A5%C3%A5%C8%A5%EF%A1%BC%A5%AF%A5%C6%A5%B9%A5%C8]]", fl.createText(linkform, linkdata));
 }
 
 exports.test_test_run = function(test) {
