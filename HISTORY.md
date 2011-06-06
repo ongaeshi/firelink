@@ -1,3 +1,9 @@
+# 1.1.1 2011/06/07
+
+* %wikiname% bug fixes.
+  * Fixed can not create link. (EUC encode wikiname, if catch an error is now displayed in the unconverted.)
+  * decodeURI -> decodeURIComponent, continuous '/' can not be translated.
+
 # 1.1 2011/05/27
 
 * Optimize of settings panel.
@@ -6,6 +12,7 @@
   * Only when there are changes to save data.
 * Add menu, "Disable Direct Select".
 * Settings panel "No." add a column.
+* Ctrl+1,2,..9,0, direct select not activate when.
 
 # 1.0 2011/05/20
 
