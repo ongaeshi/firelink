@@ -86,6 +86,10 @@ function test_createText(test) {
   linkdata = {text:"ネットワークプリンタ", title:"ネットワークプリンタ", url:"http://example.com/index.php?%A5%CD%A5%C3%A5%C8%A5%EF%A1%BC%A5%AF%A5%C6%A5%B9%A5%C8"};
   // 今の所、EUC-JPはエンコードに失敗する
   test.assertEqual("[[ネットワークプリンタ>%A5%CD%A5%C3%A5%C8%A5%EF%A1%BC%A5%AF%A5%C6%A5%B9%A5%C8]]", fl.createText(linkform, linkdata));
+
+  linkform = "[[%text%>%wikiname%]]";
+  linkdata = {text:"おんがえしの日記/2011/06", title:"おんがえしの日記/2011/06", url:"http://example.com/pukiwiki/index.php?%E3%81%8A%E3%82%93%E3%81%8C%E3%81%88%E3%81%97%E3%81%AE%E6%97%A5%E8%A8%98%2F2011%2F06#entry20110607"};
+  test.assertEqual("[[おんがえしの日記/2011/06>おんがえしの日記/2011/06#entry20110607]]", fl.createText(linkform, linkdata));
 }
 
 exports.test_test_run = function(test) {
