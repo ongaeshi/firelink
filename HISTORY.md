@@ -1,3 +1,17 @@
+# 1.2 2011/10/18
+
+* Support Add-on SDK 1.1
+  * Sorry SDK 1.1 Add-on, "simple-storage" has been replaced by the path. (jid0-seIFaYDCkHVDZhihluA8wNSDuU4 -> jid0-seIFaYDCkHVDZhihluA8wNSDuU4@jetpack)
+  * Copy the 'store.json', then please restore setting.
+  * {UserName} and {YourProfilePath} is different on your environment.
+  * OSX
+    * (befor) ~/Library/Application Support/Firefox/Profiles/{YourProfilePath}/jetpack/jid0-seIFaYDCkHVDZhihluA8wNSDuU4/simple-storage/store.json
+    * (after) ~/Library/Application Support/Firefox/Profiles/{YourProfilePath}/jetpack/jid0-seIFaYDCkHVDZhihluA8wNSDuU4@jetpack/simple-storage/store.json
+  * WindowsXP
+    * (befor) C:/Documents and Settings/{UserName}/Application Data/Firefox/Profiles/{YourProfilePath}/jetpack/jid0-seIFaYDCkHVDZhihluA8wNSDuU4/simple-storage/store.json
+    * (after) C:/Documents and Settings/{UserName}/Application Data/Firefox/Profiles/{YourProfilePath}/jetpack/jid0-seIFaYDCkHVDZhihluA8wNSDuU4@jetpack/simple-storage/store.json
+* Add context-menu icon.
+
 # 1.1.1 2011/06/07
 
 * %wikiname% bug fixes.
