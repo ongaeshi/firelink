@@ -56,17 +56,11 @@
   <div class="contents-background">
   <p>使いたい設定を表から選び、クリップボードにコピーします (Ctrl + C)。</p>
   <p><img src="import_button.jpg" alt="Import from clipboard" align="top" /> ボタンを押して下さい。</p>
-  <p><a id="link_recommended_settings" href="#">おすすめ設定のページ</a> には、さらにたくさんの設定があります。</p>
-
-  <h4>しんさく！！</h4>
-  <table>
-      <tr class="recommended-raw"><td><span>MediaWiki(wiki)</span></td><td><span>[[%wikiname%]]</span></td></tr>
-      <tr class="recommended-raw"><td><span>MediaWiki(wiki,title)</span></td><td><span>[[%wikiname%|%text%]]</span></td></tr>
-  </table>
-  <h4>基本</h4>
+  <!-- <p><a id="link_recommended_settings" href="#">おすすめ設定のページ</a> には、さらにたくさんの設定があります。</p> -->
+  <h4>Basic</h4>
   <table>
       <tr class="recommended-raw"><td><span>PlainText</span></td><td><span>%text%\n%url%</span></td></tr>
-      <tr class="recommended-raw"><td><span>Twitter</span></td><td><span>%text% %isgd%</span></td></tr>
+      <tr class="recommended-raw"><td><span>Markdown</span></td><td><span>[%text%](%url%)</span></td></tr>
   </table>
   <h4>HTML</h4>
   <table>
@@ -75,23 +69,33 @@
       <tr class="recommended-raw"><td><span>HTML(img)</span></td><td><span>&lt;a href=&quot;%url%&quot;&gt;&lt;img src=&quot;&quot; alt=&quot;%title%&quot;&gt;&lt;/a&gt;</span></td></tr>
       <tr class="recommended-raw"><td><span>DTDD</span></td><td><span>&lt;dt&gt;&lt;a href=&quot;%url%&quot;&gt;%title%&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;%text%&lt;/dd&gt;</span></td></tr>
   </table>
-  <h4>TiddlyWiki</h4>
+  <h4>MediaWiki</h4>
   <table>
-      <tr class="recommended-raw"><td><span>TiddlyWiki</span></td><td><span>[[%text%|%url%]]</span></td></tr>
-      <tr class="recommended-raw"><td><span>TiddlyWiki(list)</span></td><td><span>* [[%text%|%url%]]</span></td></tr>
-      <tr class="recommended-raw"><td><span>TiddlyWiki with DateTime</span></td><td><span>* %DateTime% [[%text%|%url%]]</span></td></tr>
+      <tr class="recommended-raw"><td><span>MediaWiki</span></td><td><span>[%url% %text%]</span></td></tr>
+      <tr class="recommended-raw"><td><span>MediaWiki(wiki)</span></td><td><span>[[%wikiname%]]</span></td></tr>
+      <tr class="recommended-raw"><td><span>MediaWiki(wiki,title)</span></td><td><span>[[%wikiname%|%text%]]</span></td></tr>
   </table>
   <h4>Pukiwiki</h4>
   <table>
       <tr class="recommended-raw"><td><span>Pukiwiki</span></td><td><span>[[%text%&gt;%url%]]</span></td></tr>
       <tr class="recommended-raw"><td><span>Pukiwiki(list)</span></td><td><span>- [[%text%&gt;%url%]]</span></td></tr>
   </table>
+  <h4>TiddlyWiki</h4>
+  <table>
+      <tr class="recommended-raw"><td><span>TiddlyWiki</span></td><td><span>[[%text%|%url%]]</span></td></tr>
+      <tr class="recommended-raw"><td><span>TiddlyWiki(list)</span></td><td><span>* [[%text%|%url%]]</span></td></tr>
+      <tr class="recommended-raw"><td><span>TiddlyWiki with DateTime</span></td><td><span>* %DateTime% [[%text%|%url%]]</span></td></tr>
+  </table>
+  <h4>etc</h4>
+  <table>
+      <tr class="recommended-raw"><td><span>Twitter</span></td><td><span>%text% %url%</span></td></tr>
+  </table>
   </div>
 
   <h1>ホームページ</h1>
   <div class="contents-background">
   <p>FireLinkの最新情報はこちら</p>
-  <p><a id="link_homepage" href="#">MainPage - FireLink</a></p>
+  <p><a id="link_homepage" href="#">Add-ons for Firefox</a></p>
   </div>
 
   <h1>マニュアル</h1>
@@ -137,8 +141,7 @@
   <dl id="dl-variables" class="variables">
     <dt>\n</dt>
     <dd>改行</dd>
-    <dt>\t</dt>
-    <dd>タブ</dd>
+    <dt>\t</dt>    <dd>タブ</dd>
   </dl>
   </div>
 
