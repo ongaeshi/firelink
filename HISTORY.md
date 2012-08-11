@@ -1,3 +1,7 @@
+# 1.3 2012/08/10
+
+* Support Add-on SDK 1.9
+
 # 1.2 2011/10/18
 
 * Support Add-on SDK 1.1
