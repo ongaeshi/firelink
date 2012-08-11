@@ -15,18 +15,19 @@ self.on('message', function(msg) {
       ctable._listener.onPushButton = function (msg) {
         self.postMessage({kind: msg});
       }
-
-      {
-        var a = document.getElementById('link_recommended_settings');
-        a.addEventListener('click', function (ev) {
-          self.postMessage({kind: "tab_open", url:"http://firelink.ongaeshi.me/Recommended_Settings"});
-        }, true);
-      }
+      
+      // {
+      //   var a = document.getElementById('link_recommended_settings');
+      //   a.addEventListener('click', function (ev) {
+      //     self.postMessage({kind: "tab_open", url:"http://firelink.ongaeshi.me/Recommended_Settings"});
+      //   }, true);
+      // }
 
       {
         var a = document.getElementById('link_homepage');
         a.addEventListener('click', function (ev) {
-          self.postMessage({kind: "tab_open", url:"http://firelink.ongaeshi.me/"});
+          // self.postMessage({kind: "tab_open", url:"http://firelink.ongaeshi.me/"});
+          self.postMessage({kind: "tab_open", url:"https://addons.mozilla.org/firefox/addon/firelink/"});
         }, true);
       }
     }

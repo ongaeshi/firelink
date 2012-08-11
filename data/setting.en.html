@@ -57,17 +57,11 @@
   <h1>Recommended Settings</h1>
   <div class="contents-background">
   <p>Copy to clipboard (Ctrl + C), and <img src="import_button.jpg" alt="Import from clipboard" align="top" /> button click.</p>
-  <p><a id="link_recommended_settings" href="#">Recommended Settings</a> has many more settings.</p>
-
-  <h4>New!</h4>
-  <table>
-      <tr class="recommended-raw"><td><span>MediaWiki(wiki)</span></td><td><span>[[%wikiname%]]</span></td></tr>
-      <tr class="recommended-raw"><td><span>MediaWiki(wiki,title)</span></td><td><span>[[%wikiname%|%text%]]</span></td></tr>
-  </table>
+  <!-- <p><a id="link_recommended_settings" href="#">Recommended Settings</a> has many more settings.</p> -->
   <h4>Basic</h4>
   <table>
       <tr class="recommended-raw"><td><span>PlainText</span></td><td><span>%text%\n%url%</span></td></tr>
-      <tr class="recommended-raw"><td><span>Twitter</span></td><td><span>%text% %isgd%</span></td></tr>
+      <tr class="recommended-raw"><td><span>Markdown</span></td><td><span>[%text%](%url%)</span></td></tr>
   </table>
   <h4>HTML</h4>
   <table>
@@ -76,16 +70,26 @@
       <tr class="recommended-raw"><td><span>HTML(img)</span></td><td><span>&lt;a href=&quot;%url%&quot;&gt;&lt;img src=&quot;&quot; alt=&quot;%title%&quot;&gt;&lt;/a&gt;</span></td></tr>
       <tr class="recommended-raw"><td><span>DTDD</span></td><td><span>&lt;dt&gt;&lt;a href=&quot;%url%&quot;&gt;%title%&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;%text%&lt;/dd&gt;</span></td></tr>
   </table>
+  <h4>MediaWiki</h4>
+  <table>
+      <tr class="recommended-raw"><td><span>MediaWiki</span></td><td><span>[%url% %text%]</span></td></tr>
+      <tr class="recommended-raw"><td><span>MediaWiki(wiki)</span></td><td><span>[[%wikiname%]]</span></td></tr>
+      <tr class="recommended-raw"><td><span>MediaWiki(wiki,title)</span></td><td><span>[[%wikiname%|%text%]]</span></td></tr>
+  </table>
+  <h4>Pukiwiki</h4>
+  <table>
+      <tr class="recommended-raw"><td><span>Pukiwiki</span></td><td><span>[[%text%&gt;%url%]]</span></td></tr>
+      <tr class="recommended-raw"><td><span>Pukiwiki(list)</span></td><td><span>- [[%text%&gt;%url%]]</span></td></tr>
+  </table>
   <h4>TiddlyWiki</h4>
   <table>
       <tr class="recommended-raw"><td><span>TiddlyWiki</span></td><td><span>[[%text%|%url%]]</span></td></tr>
       <tr class="recommended-raw"><td><span>TiddlyWiki(list)</span></td><td><span>* [[%text%|%url%]]</span></td></tr>
       <tr class="recommended-raw"><td><span>TiddlyWiki with DateTime</span></td><td><span>* %DateTime% [[%text%|%url%]]</span></td></tr>
   </table>
-  <h4>Pukiwiki</h4>
+  <h4>etc</h4>
   <table>
-      <tr class="recommended-raw"><td><span>Pukiwiki</span></td><td><span>[[%text%&gt;%url%]]</span></td></tr>
-      <tr class="recommended-raw"><td><span>Pukiwiki(list)</span></td><td><span>- [[%text%&gt;%url%]]</span></td></tr>
+      <tr class="recommended-raw"><td><span>Twitter</span></td><td><span>%text% %url%</span></td></tr>
   </table>
   </div>
 

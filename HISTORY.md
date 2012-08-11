@@ -1,3 +1,9 @@
+# 1.3 2012/08/11
+
+* Support Add-on SDK 1.9
+* Add default setting 'Markdown', 'MediaWiki', 'PukiWiki', 'TiddlyWiki', 'hatena'
+* Fix setting.ja.html, setting.en.html
+
 # 1.2 2011/10/18
 
 * Support Add-on SDK 1.1

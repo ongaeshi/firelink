@@ -312,8 +312,12 @@
 				var defaultLinkformData = [
 					{name:"PlainText",   format:"%text%\\n%url%"},
 					{name:"HTML",        format:"<a href=\"%url%\">%text%</a>"},
-					{name:"Twitter",     format:"%text% %isgd%"},
-					{name:"TiddlyWiki",  format:"[[%text%|%url%]]"}
+					{name:"Markdown",   format:"[%text%](%url%)"},
+					{name:"MediaWiki",   format:"[%url% %text%]"},
+					{name:"PukiWiki",   format:"[[%text%>%url%]]"},
+					{name:"TiddlyWiki",  format:"[[%text%|%url%]]"},
+					{name:"Twitter",     format:"%text% %url%"},
+					{name:"hatena",      format:"[%url%:title=%text%]"}
 				];
 
 				self.initalize(defaultLinkformData);
