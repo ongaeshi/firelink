@@ -1,0 +1,30 @@
+h1 {
+    margin: 5px;
+    float: left;
+}
+
+#clear {
+    clear: both;
+}
+
+#from-lang {
+    float: left;
+    margin: 5px 0px 5px 5px;
+}
+
+#to-lang {
+    float: left;
+    margin: 5px 0px 5px 10px;
+}
+
+#close {
+    float: right;
+    margin: 5px 0px 5px 10px;
+}
+
+#close-button {
+    margin: 5px;
+    width: 80px;
+    height: 35px;
+}
+
