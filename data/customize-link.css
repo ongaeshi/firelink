@@ -1,4 +1,5 @@
 h1 {
+    font-size: 24px;
     margin: 5px;
     float: left;
 }
@@ -7,19 +8,25 @@ h1 {
     clear: both;
 }
 
-#from-lang {
+#text {
     float: left;
     margin: 5px 0px 5px 5px;
 }
 
-#to-lang {
+#url {
     float: left;
     margin: 5px 0px 5px 10px;
 }
 
-#close {
+#buttons {
     float: right;
     margin: 5px 0px 5px 10px;
+}
+
+#ok-button {
+    margin: 5px;
+    width: 80px;
+    height: 35px;
 }
 
 #close-button {
