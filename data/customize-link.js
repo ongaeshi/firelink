@@ -1,5 +1,16 @@
 // ボタンイベント
 $(function() {
+  $("#ok-button").click(function() {
+    var msg = {
+      kind: 'ok',
+      linkdata: {
+        text: $('#text-input').val(),
+        url: $('#url-input').val()
+      }
+    };
+    self.postMessage(msg);
+  });
+
   $("#close-button").click(function() {
     var msg = {
       kind: 'close'
@@ -12,16 +23,9 @@ $(function() {
 self.on('message', function(msg) {
   switch (msg.kind) {
    case "init":
-    Dump.p(msg.linkdata);
+    // Dump.p(msg.linkdata);
     $('#text-input').val(msg.linkdata.text);
     $('#url-input').val(msg.linkdata.url);
-    break;
-   case "save":
-    self.postMessage({
-      kind: "save",
-      from: $('#from-lang-select').val(),
-      to: $('#to-lang-select').val()
-    });
     break;
   }
 });
