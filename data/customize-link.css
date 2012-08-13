@@ -1,0 +1,37 @@
+h1 {
+    font-size: 24px;
+    margin: 5px;
+    float: left;
+}
+
+#clear {
+    clear: both;
+}
+
+#text {
+    float: left;
+    margin: 5px 0px 5px 5px;
+}
+
+#url {
+    float: left;
+    margin: 5px 0px 5px 10px;
+}
+
+#buttons {
+    float: right;
+    margin: 5px 0px 5px 10px;
+}
+
+#ok-button {
+    margin: 2px;
+    width: 50px;
+    height: 25px;
+}
+
+#close-button {
+    margin: 2px;
+    width: 50px;
+    height: 25px;
+}
+

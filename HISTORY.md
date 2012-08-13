@@ -1,3 +1,8 @@
+# 2.0 2012/08/13
+
+* Add 'Edit title' (Edit title and create link)
+* Add 'Disable Keyboard shortcuts'
+
 # 1.3 2012/08/11
 
 * Support Add-on SDK 1.9
