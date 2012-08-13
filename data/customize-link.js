@@ -5,7 +5,8 @@ $(function() {
       kind: 'ok',
       linkdata: {
         text: $('#text-input').val(),
-        url: $('#url-input').val()
+        url: $('#url-input').val(),
+        title: $('#title-input').val()
       }
     };
     self.postMessage(msg);
@@ -26,6 +27,7 @@ self.on('message', function(msg) {
     // Dump.p(msg.linkdata);
     $('#text-input').val(msg.linkdata.text);
     $('#url-input').val(msg.linkdata.url);
+    $('#title-input').val(msg.linkdata.title);
     break;
   }
 });
