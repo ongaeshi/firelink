@@ -25,6 +25,7 @@ self.on('message', function(msg) {
   switch (msg.kind) {
    case "init":
     // Dump.p(msg.linkdata);
+    $('h1').html(msg.label);
     $('#text-input').val(msg.linkdata.text);
     $('#url-input').val(msg.linkdata.url);
     $('#title-input').val(msg.linkdata.title);
