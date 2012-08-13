@@ -1,3 +1,7 @@
+# 2.0.1 2012/08/13
+
+* Bug fix
+
 # 2.0 2012/08/13
 
 * Add 'Edit title' (Edit title and create link)
