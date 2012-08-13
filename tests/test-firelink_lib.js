@@ -97,16 +97,16 @@ exports.test_test_run = function(test) {
   test_parseDate(test);
   test_isgd(test);
   test_copyLinkAndNotify(test);
-
+  
   // -- 展開 --
-  fl.changeLinkform("%text% %isgd%");
-  test.assertEqual(2, fl.currentIndex());
+  // fl.changeLinkform("%text% %url%");
+  // test.assertEqual(1, fl.currentIndex());
 
   fl.changeLinkform("fake");    // 見つからない
   test.assertEqual(0, fl.currentIndex());
 
   fl.changeLinkform("[[%text%|%url%]]");
-  test.assertEqual(3, fl.currentIndex());
+  test.assertEqual(5, fl.currentIndex());
 
   // 
   test_createText(test);
