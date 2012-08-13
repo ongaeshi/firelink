@@ -12,8 +12,9 @@ $(function() {
 self.on('message', function(msg) {
   switch (msg.kind) {
    case "init":
-    $('#from-lang-select').val(msg.translateLang.from);
-    $('#to-lang-select').val(msg.translateLang.to);
+    Dump.p(msg.linkdata);
+    $('#text-input').val(msg.linkdata.text);
+    $('#url-input').val(msg.linkdata.url);
     break;
    case "save":
     self.postMessage({
