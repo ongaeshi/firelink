@@ -2,7 +2,7 @@
 layout: layout
 title: FireLink
 ---
-# FireLink
+# FireLinkって?
 
 開いているWebページのURLやタイトルを好きな形式に加工してコピー出来るFirefoxプラグインです。
 
@@ -12,5 +12,16 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 ### Header3
 
+<pre class="blockcode">
+ aaa
+ bbb
+ ccc
+</pre>
+
+<pre class="shell">
+ aaa
+ bbb
+ ccc
+</pre>
 
 
