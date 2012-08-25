@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <head>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-  <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
-  <link rel="stylesheet" href="/assets/css/syntax.css" type="text/css">
+  <title>FireLink</title>
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
+
 <body>
-  {{ content }}
-  <p>- rendered with layout template -</p>
+  <header>
+    <h1>FireLink</h1>
+    <nav>
+      <ul>
+        <li><a href="./index.html">HOME</a></li>
+        <li><a href="./screenshot.html">ScreenShot</a></li>
+        <li><a href="./example.html">Example</a></li>
+        <li><a href="./contacts.html">Contacts</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <article>
+    {{ content }}
+  </article>
 </body>
+
+<footer>
+  <p>- rendered with layout template -</p>
+</footer>
+
+</html>
 
