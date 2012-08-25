@@ -1,6 +1,6 @@
 ---
 layout: layout
-title: 開いているWebページのURLやタイトルを好きな形式でコピー
+title: WebページのURLやタイトルを好きな形式でコピー
 ---
 開いているWebページのURLやタイトルを好きな形式でコピー出来るFirefoxプラグインです → [Install](https://addons.mozilla.org/ja/firefox/addon/firelink/)
 
