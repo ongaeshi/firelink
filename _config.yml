@@ -4,6 +4,7 @@ safe: true
 # destination: <the build dir>
 lsi: false
 pygments: true
+markdown: rdiscount
 
 # my setting
 author:
