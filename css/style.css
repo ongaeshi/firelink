@@ -161,6 +161,16 @@ nav ul li {
     border-bottom: 3px solid #a0a0a0;
 }
 
+#toolbar {
+    margin-top: 16pt;
+    margin-bottom: 16pt;
+}
+
+#tweet_button, #hatena_button, #github_button {
+    float: right;
+    margin-right: 5px;
+}
+
 /* --- article --- */
 
 /* --- footer --- */
