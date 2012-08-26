@@ -84,6 +84,15 @@ code {
     white-space: nowrap;
 }
 
+table {
+    border-collapse:collapse;
+    border: 2px #888 solid;
+}
+
+td, th {
+    border: 1px #888 solid;
+}
+
 /* --- header --- */
 
 header {
