@@ -25,6 +25,7 @@ title: WebページのURLやタイトルを好きな形式でコピー
 * <b><font color="red">New!!</font></b> タイトル、URLをその場で編集してリンク生成
 
 ## 関連リンク
+### リソース
 * [ongaeshi/firelink - Github](https://github.com/ongaeshi/firelink)
 
 ### 紹介記事
