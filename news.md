@@ -2,7 +2,7 @@
 layout: layout
 title: History
 ---
-# 更新情報
+# ニュース
 
 詳しくは [firelink/HISTORY.md](https://github.com/ongaeshi/firelink/blob/master/HISTORY.md) をどうぞ。
 
