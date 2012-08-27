@@ -1,6 +1,6 @@
 ---
 layout: layout
-title: History
+title: ニュース
 ---
 # ニュース
 

@@ -1,24 +1,24 @@
 ---
 layout: layout
-title: スクリーンショット
+title: ScreenShot
 ---
-## コンテキストメニューから生成
-HTML, Twitter, MeidaWiki, PukiWikiといった様々な形式に対応
+## From Context-Menu
+Compatible with various formats, such as HTML, Twitter, MeidaWiki, PukiWiki.
 
 <img alt='' src='/images/overview01.png' width='70%' />
 
-## ショートカットキー
-キーボードだけでリンク種類の切り替え&コピー
+## Shortcut
+Only with the keyboard toggle link types & copy.
 
 <img alt='' src='/images/overview07.png' width='70%' />
 
-## カスタマイズ
-独自のリンク形式を作成
+## Customize
+Create your own link format.
 
 <img alt='' src='/images/overview02.png' width='70%' />
 
-## タイトルの編集
-タイトルとURLをその場で編集してリンク生成
+## Edit title
+Edit the title, URL and link generation.
 
 <img alt='' src='/images/overview10.jpg' width='90%' />
 

@@ -1,15 +1,15 @@
 ---
 layout: layout
-title: 設定集
+title: Setting Collection
 ---
-# 設定集
+# Setting Collection
 
-### 使い方
+###  How to use
 
-1. 使いたい設定を表から選び、行ごとクリップボードにコピーします
-2. コンテキストメニューから `[FireLink] -> [設定]` を開きます
-3. `Import from clipboard` ボタンを押すと設定が追加されます
-4. おすすめの設定が見つかったら [twitter/ongaeshi](https://twitter.com/ongaeshi) まで教えて下さい
+1. Choose the settings you want to use from the table, each row onto the Clipboard
+2. From the context menu `[FireLink] -> [Settings]` open
+3. `Import from clipboard` button to add the settings
+4. When you find the recommended settings please tell me up to [twitter/ongaeshi](https://twitter.com/ongaeshi)
 
 ### Basic
 
