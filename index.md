@@ -1,6 +1,6 @@
 ---
 layout: layout
-title: Copy title and URL of the Web page in any format
+title: Copy title and URL in any format
 ---
 It's a Firefox plugin. You can copy title and URL of the Web page in any format -> [Install](https://addons.mozilla.org/en/firefox/addon/firelink/)
 
