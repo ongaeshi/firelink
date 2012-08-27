@@ -121,6 +121,10 @@ header a {
     float: left;
 }
 
+#title #langs {
+    float: right;
+}
+
 #title:after {
   height: 0;
   visibility: hidden;
