@@ -54,74 +54,7 @@
 
   </div>
   
-  <h1>Recommended Settings</h1>
-  <div class="contents-background">
-  <p>Copy to clipboard (Ctrl + C), and <img src="import_button.jpg" alt="Import from clipboard" align="top" /> button click.</p>
-  <!-- <p><a id="link_recommended_settings" href="#">Recommended Settings</a> has many more settings.</p> -->
-  <h4>Basic</h4>
-  <table>
-      <tr class="recommended-raw"><td><span>PlainText</span></td><td><span>%text%\n%url%</span></td></tr>
-      <tr class="recommended-raw"><td><span>Markdown</span></td><td><span>[%text%](%url%)</span></td></tr>
-  </table>
-  <h4>HTML</h4>
-  <table>
-      <tr class="recommended-raw"><td><span>HTML</span></td><td><span>&lt;a href=&quot;%url%&quot;&gt;%text%&lt;/a&gt;</span></td></tr>
-      <tr class="recommended-raw"><td><span>HTML(list)</span></td><td><span>&lt;li&gt;&lt;a href=&quot;%url%&quot;&gt;%text%&lt;/a&gt;</span></td></tr>
-      <tr class="recommended-raw"><td><span>HTML(img)</span></td><td><span>&lt;a href=&quot;%url%&quot;&gt;&lt;img src=&quot;&quot; alt=&quot;%title%&quot;&gt;&lt;/a&gt;</span></td></tr>
-      <tr class="recommended-raw"><td><span>DTDD</span></td><td><span>&lt;dt&gt;&lt;a href=&quot;%url%&quot;&gt;%title%&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;%text%&lt;/dd&gt;</span></td></tr>
-  </table>
-  <h4>MediaWiki</h4>
-  <table>
-      <tr class="recommended-raw"><td><span>MediaWiki</span></td><td><span>[%url% %text%]</span></td></tr>
-      <tr class="recommended-raw"><td><span>MediaWiki(wiki)</span></td><td><span>[[%wikiname%]]</span></td></tr>
-      <tr class="recommended-raw"><td><span>MediaWiki(wiki,title)</span></td><td><span>[[%wikiname%|%text%]]</span></td></tr>
-  </table>
-  <h4>Pukiwiki</h4>
-  <table>
-      <tr class="recommended-raw"><td><span>Pukiwiki</span></td><td><span>[[%text%&gt;%url%]]</span></td></tr>
-      <tr class="recommended-raw"><td><span>Pukiwiki(list)</span></td><td><span>- [[%text%&gt;%url%]]</span></td></tr>
-  </table>
-  <h4>TiddlyWiki</h4>
-  <table>
-      <tr class="recommended-raw"><td><span>TiddlyWiki</span></td><td><span>[[%text%|%url%]]</span></td></tr>
-      <tr class="recommended-raw"><td><span>TiddlyWiki(list)</span></td><td><span>* [[%text%|%url%]]</span></td></tr>
-      <tr class="recommended-raw"><td><span>TiddlyWiki with DateTime</span></td><td><span>* %DateTime% [[%text%|%url%]]</span></td></tr>
-  </table>
-  <h4>etc</h4>
-  <table>
-      <tr class="recommended-raw"><td><span>Twitter</span></td><td><span>%text% %url%</span></td></tr>
-  </table>
-  </div>
-
-  <h1>Website</h1>
-  <div class="contents-background">
-  <p>Click here for the latest information !!</p>
-  <p><a id="link_homepage" href="#">MainPage - FireLink</a></p>
-  </div>
-
-  <h1>Manual</h1>
-  <h2>Keyboard ShortCuts</h2>
-  <h3>Create Link (copy to clipboard).</h3>
-  <div class="contents-background">
-  <dl id="dl-shortcuts-create" class="variables">
-    <dt>Ctrl+C</dt>
-    <dd>Create link.</dd>
-    <dt>Ctrl+Shift+C</dt>
-    <dd><strong>Selected text</strong> to %text% and Create link. </dd>
-    <dd>If not selected, <strong>Clipboard text</strong> to %text% and Create link. </dd>
-  </dl>
-  </div>
-
-  <h3>Select Linkform</h3>
-  <div class="contents-background">
-  <dl id="dl-shortcuts-select" class="variables">
-    <dt>"1", "2", "3", ... "9", "0"</dt>
-    <dd>Direct select.</dd>
-  </dl>
-  </div>
-
-  <h2>Variables</h2>
-  <h3>Basic</h3>
+  <h2>Basic</h2>
   <div class="contents-background">
   <dl id="dl-variables" class="variables">
     <dt>%text%</dt>
@@ -137,7 +70,7 @@
   </dl>
   </div>
 
-  <h3>Special</h3>
+  <h2>Special</h2>
   <div class="contents-background">
   <dl id="dl-variables" class="variables">
     <dt>\n</dt>
@@ -147,7 +80,7 @@
   </dl>
   </div>
 
-  <h3>Date & Time</h3>
+  <h2>Date & Time</h2>
   <div class="contents-background">
   <dl id="dl-variables" class="variables">
     <dt>%date%</dt>
@@ -171,6 +104,14 @@
   </dl>
   </div>
   
+  <h1>Links</h1>
+  <div class="contents-background">
+    <ul style="list-style-type: disc">
+      <li><a id="link_homepage" href="#">FireLink - Copy title and URL in any format</a></p>
+      <li><a id="link_recommended_settings" href="#">FireLink - Setting Collection</a></p>
+    </ul>
+  </div>
+
 </body>
 
 </html>

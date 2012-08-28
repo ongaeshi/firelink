@@ -52,75 +52,7 @@
 
   </div>
   
-  <h1>おすすめ設定</h1>
-  <div class="contents-background">
-  <p>使いたい設定を表から選び、クリップボードにコピーします (Ctrl + C)。</p>
-  <p><img src="import_button.jpg" alt="Import from clipboard" align="top" /> ボタンを押して下さい。</p>
-  <!-- <p><a id="link_recommended_settings" href="#">おすすめ設定のページ</a> には、さらにたくさんの設定があります。</p> -->
-  <h4>Basic</h4>
-  <table>
-      <tr class="recommended-raw"><td><span>PlainText</span></td><td><span>%text%\n%url%</span></td></tr>
-      <tr class="recommended-raw"><td><span>Markdown</span></td><td><span>[%text%](%url%)</span></td></tr>
-  </table>
-  <h4>HTML</h4>
-  <table>
-      <tr class="recommended-raw"><td><span>HTML</span></td><td><span>&lt;a href=&quot;%url%&quot;&gt;%text%&lt;/a&gt;</span></td></tr>
-      <tr class="recommended-raw"><td><span>HTML(list)</span></td><td><span>&lt;li&gt;&lt;a href=&quot;%url%&quot;&gt;%text%&lt;/a&gt;</span></td></tr>
-      <tr class="recommended-raw"><td><span>HTML(img)</span></td><td><span>&lt;a href=&quot;%url%&quot;&gt;&lt;img src=&quot;&quot; alt=&quot;%title%&quot;&gt;&lt;/a&gt;</span></td></tr>
-      <tr class="recommended-raw"><td><span>DTDD</span></td><td><span>&lt;dt&gt;&lt;a href=&quot;%url%&quot;&gt;%title%&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;%text%&lt;/dd&gt;</span></td></tr>
-  </table>
-  <h4>MediaWiki</h4>
-  <table>
-      <tr class="recommended-raw"><td><span>MediaWiki</span></td><td><span>[%url% %text%]</span></td></tr>
-      <tr class="recommended-raw"><td><span>MediaWiki(wiki)</span></td><td><span>[[%wikiname%]]</span></td></tr>
-      <tr class="recommended-raw"><td><span>MediaWiki(wiki,title)</span></td><td><span>[[%wikiname%|%text%]]</span></td></tr>
-  </table>
-  <h4>Pukiwiki</h4>
-  <table>
-      <tr class="recommended-raw"><td><span>Pukiwiki</span></td><td><span>[[%text%&gt;%url%]]</span></td></tr>
-      <tr class="recommended-raw"><td><span>Pukiwiki(list)</span></td><td><span>- [[%text%&gt;%url%]]</span></td></tr>
-  </table>
-  <h4>TiddlyWiki</h4>
-  <table>
-      <tr class="recommended-raw"><td><span>TiddlyWiki</span></td><td><span>[[%text%|%url%]]</span></td></tr>
-      <tr class="recommended-raw"><td><span>TiddlyWiki(list)</span></td><td><span>* [[%text%|%url%]]</span></td></tr>
-      <tr class="recommended-raw"><td><span>TiddlyWiki with DateTime</span></td><td><span>* %DateTime% [[%text%|%url%]]</span></td></tr>
-  </table>
-  <h4>etc</h4>
-  <table>
-      <tr class="recommended-raw"><td><span>Twitter</span></td><td><span>%text% %url%</span></td></tr>
-  </table>
-  </div>
-
-  <h1>ホームページ</h1>
-  <div class="contents-background">
-  <p>FireLinkの最新情報はこちら</p>
-  <p><a id="link_homepage" href="#">Add-ons for Firefox</a></p>
-  </div>
-
-  <h1>マニュアル</h1>
-  <h2>キーボードショートカット</h2>
-  <h3>リンクの生成 (クリップボードにコピー)</h3>
-  <div class="contents-background">
-  <dl id="dl-shortcuts-create" class="variables">
-    <dt>Ctrl+C</dt>
-    <dd>前回のリンク形式でリンク</dd>
-    <dt>Ctrl+Shift+C</dt>
-    <dd><strong>選択したテキスト</strong> の内容を %text% に格納し、リンク生成 </dd>
-    <dd>選択されていなければ、<strong>クリップボード</strong>の内容を %text% に格納し、リンク生成 </dd>
-  </dl>
-  </div>
-
-  <h3>リンク形式の選択</h3>
-  <div class="contents-background">
-  <dl id="dl-shortcuts-select" class="variables">
-    <dt>"1", "2", "3", ... "9", "0"</dt>
-    <dd>指定番号のリンク形式に切り替え</dd>
-  </dl>
-  </div>
-
-  <h2>特殊変数</h2>
-  <h3>基本</h3>
+  <h2>基本</h2>
   <div class="contents-background">
   <dl id="dl-variables" class="variables">
     <dt>%text%</dt>
@@ -136,7 +68,7 @@
   </dl>
   </div>
 
-  <h3>特殊文字</h3>
+  <h2>特殊文字</h2>
   <div class="contents-background">
   <dl id="dl-variables" class="variables">
     <dt>\n</dt>
@@ -145,7 +77,7 @@
   </dl>
   </div>
 
-  <h3>日付と時刻</h3>
+  <h2>日付と時刻</h2>
   <div class="contents-background">
   <dl id="dl-variables" class="variables">
     <dt>%date%</dt>
@@ -169,6 +101,14 @@
   </dl>
   </div>
   
+  <h1>リンク</h1>
+  <div class="contents-background">
+    <ul style="list-style-type: disc">
+      <li><a id="link_homepage" href="#">FireLink - WebページのURLやタイトルを好きな形式でコピー</a></p>
+      <li><a id="link_recommended_settings" href="#">FireLink - 設定集</a></p>
+    </ul>
+  </div>
+
 </body>
 
 </html>
