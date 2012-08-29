@@ -3,7 +3,7 @@ $(function() {
   var okMessage = function() {
     return {
       kind: 'ok',
-      select_no: parseInt($('#kind-select option:selected').val(), 10),
+      select_index: parseInt($('#kind-select option:selected').val(), 10),
       linkdata: {
         text:    $('#text-input').val(),
         url:     $('#url-input').val(),
@@ -35,12 +35,14 @@ self.on('message', function(msg) {
   switch (msg.kind) {
    case "init":
     // Dump.p(msg.linkformData);
+
+    var index = 0;
     var options = msg.linkformData.map(function(v) {
-      return '<option value="' + v.no + '">' + v.name + '</option>';
+      return '<option value="' + index++ + '">' + v.name + '</option>';
     }).join("");
-    
+
     $('#kind-select').html(options);
-    $('#kind-select').val(msg.select_no); // 初期位置
+    $('#kind-select').val(msg.select_index); // 初期位置
     $('#text-input').val(msg.linkdata.text);
     $('#url-input').val(msg.linkdata.url);
     $('#title-input').val(msg.linkdata.title);
