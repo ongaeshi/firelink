@@ -3,11 +3,11 @@ $(function() {
   var okMessage = function() {
     return {
       kind: 'ok',
-      label: $('h1').html(),
+      select_index: parseInt($('#kind-select option:selected').val(), 10),
       linkdata: {
-        text: $('#text-input').val(),
-        url: $('#url-input').val(),
-        title: $('#title-input').val()
+        text:    $('#text-input').val(),
+        url:     $('#url-input').val(),
+        title:   $('#title-input').val()
       }
     };
   };
@@ -34,8 +34,15 @@ $(function() {
 self.on('message', function(msg) {
   switch (msg.kind) {
    case "init":
-    // Dump.p(msg.linkdata);
-    $('h1').html(msg.label);
+    // Dump.p(msg.linkformData);
+
+    var index = 0;
+    var options = msg.linkformData.map(function(v) {
+      return '<option value="' + index++ + '">' + v.name + '</option>';
+    }).join("");
+
+    $('#kind-select').html(options);
+    $('#kind-select').val(msg.select_index); // 初期位置
     $('#text-input').val(msg.linkdata.text);
     $('#url-input').val(msg.linkdata.url);
     $('#title-input').val(msg.linkdata.title);
