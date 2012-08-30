@@ -1,3 +1,10 @@
+# 2.1.0 2012/08/31
+
+* Add kind selection box 'Edit-panel'
+* Add branch 'gh-pages' (http://firelink.ongaeshi.me)
+  * Move shortcuts.md and variables.md to 'gh-page'
+* Change context-menu layout
+
 # 2.0.1 2012/08/13
 
 * Bug fix
