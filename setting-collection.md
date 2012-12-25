@@ -16,6 +16,7 @@ title: Setting Collection
 <table>
 <tr class="recommended-raw"><td><span>PlainText</span></td><td><span>%text%\n%url%</span></td></tr>
 <tr class="recommended-raw"><td><span>Markdown</span></td><td><span>[%text%](%url%)</span></td></tr>
+<tr class="recommended-raw"><td><span>Textile</span></td><td><span>"%text%":%url%</span></td></tr>
 </table>
 
 ### HTML
@@ -48,7 +49,9 @@ title: Setting Collection
 <tr class="recommended-raw"><td><span>TiddlyWiki with DateTime</span></td><td><span>* %DateTime% [[%text%|%url%]]</span></td></tr>
 </table>
 
-### etc
+### Other
 <table>
 <tr class="recommended-raw"><td><span>Twitter</span></td><td><span>%text% %url%</span></td></tr>
+<tr class="recommended-raw"><td><span>Plurl</span></td><td><span>%url% (%text%)</span></td></tr>
+<tr class="recommended-raw"><td><span>hatena</span></td><td><span>[%url%:title=%text%]</span></td></tr>
 </table>
