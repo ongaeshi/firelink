@@ -34,7 +34,7 @@ exports.test_locale = function(test) {
   test.assertEqual(locale in pool["Hi!"], true);
 };
 
-const {classes: Cc, interfaces: Ci, utils: Cu} = Components;
+// const {classes: Cc, interfaces: Ci, utils: Cu} = Components;
 
 exports.test_locale2 = function(test) {
   test.pass("Test Locale2 .....");

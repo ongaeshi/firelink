@@ -53,10 +53,13 @@ function onKeyDown(event) {
         self.postMessage({kind: 'redoLink', linkdata: linkdata});      
         
     } else {
-      if (!isSelected(window)) 
-        self.postMessage({kind: 'textFromClipboard', linkdata: linkdata});
-      else
-        self.postMessage({kind: 'redoLink', linkdata: linkdata});
+      // テキスト非選択時もダイアログを表示
+      self.postMessage({kind: 'textFromClipboard', linkdata: linkdata});
+      
+      // if (!isSelected(window)) 
+      //   self.postMessage({kind: 'textFromClipboard', linkdata: linkdata});
+      // else
+      //   self.postMessage({kind: 'redoLink', linkdata: linkdata});
     }
   }
   
