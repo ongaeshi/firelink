@@ -1,3 +1,10 @@
+# 2.2.0 2013/03/29
+
+* Displays a dialog when pressed 'Ctrl + Shift + C' in non-selected text
+* Upgrade Add-on SDK 1.14
+  * Fix 'Edit title' dialog bug.
+* Delete Components
+
 # 2.1.0 2012/08/31
 
 * Add kind selection box 'Edit-panel'
