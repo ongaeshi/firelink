@@ -35,16 +35,22 @@ function onKeyDown(event) {
   if (tag == "input" || tag == "textarea") { return; }
 
   var linkdata = null;
+  var url = window.document.location.href;
+
+  // looking for short or canonical link.
+  canonical = window.document.querySelector('link[rel=canonical],link[rel=shorturl],link[rel=shortlink]');
+  if (canonical)
+      url = canonical.href;
 
   // テキスト選択、非選択で変わる
   if (!isSelected(window))
     linkdata = {text:  window.document.title,
                 title: window.document.title,
-                url:   window.document.location.href};
+                url:   url};
   else
     linkdata = {text:  window.getSelection().toString(),
                 title: window.document.title,
-                url:   window.document.location.href};
+                url:   url};
 
   // リンク生成
   if (isCtrl(event, window) && event.keyCode == 67/*C*/) {
