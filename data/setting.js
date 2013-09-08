@@ -32,7 +32,19 @@ self.on('message', function(msg) {
       }
     }
     break;
-    
+
+   case "shortening":
+    {
+        var input = document.getElementById('shortening');
+        input.value = msg.data;
+        input.addEventListener('input', function(){
+            self.postMessage({kind: "saveshortening", data: $(this).val()});
+
+        });
+
+    }
+    break;
+
    case "import":
     ctable.importData(msg.data);
     break;
