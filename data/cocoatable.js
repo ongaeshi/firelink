@@ -313,7 +313,8 @@
 					{name:"PukiWiki",   format:"[[%text%>%url%]]"},
 					{name:"TiddlyWiki",  format:"[[%text%|%url%]]"},
 					{name:"Twitter",     format:"%text% %url%"},
-					{name:"hatena",      format:"[%url%:title=%text%]"}
+					{name:"hatena",      format:"[%url%:title=%text%]"},
+					{name:"short",      format:"%text% %short%"}
 				];
 
 				self.initalize(defaultLinkformData);
