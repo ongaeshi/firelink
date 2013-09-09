@@ -38,7 +38,7 @@ function onKeyDown(event) {
   var url = window.document.location.href;
 
   // looking for short or canonical link.
-  canonical = window.document.querySelector('link[rel=canonical],link[rel=shorturl],link[rel=shortlink]');
+  var canonical = window.document.querySelector('link[rel=canonical],link[rel=shorturl],link[rel=shortlink]');
   if (canonical)
       url = canonical.href;
 
