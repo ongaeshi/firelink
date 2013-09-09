@@ -1,3 +1,12 @@
+# 2.3.0 2013/09/10
+
+* #3 make shortening service url as an option. (thanks chihchun)
+  * people can use their love service like tinyurl or bit.ly.
+  * Add default setting 'short'
+* #2 Support canonical/shortlink/shorturl (thanks chihchun)
+* Add AUTHORS file
+  * Delete src code author
+
 # 2.2.0 2013/03/29
 
 * Displays a dialog when pressed 'Ctrl + Shift + C' in non-selected text
