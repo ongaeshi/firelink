@@ -1,7 +1,4 @@
-//
-// @brief Dump#p (Mimics the Ruby Object#p for JavaScript.)
-// @author ongaeshi
-// @date   2011/10/09
+// Dump#p (Mimics the Ruby Object#p for JavaScript.)
 //
 // Dump.p("Hello");                             #=> "Hello"
 // Dump.p(1.5);                                 #=> 1.5
@@ -96,4 +93,3 @@ var Dump = {
     });
   }
 };
-

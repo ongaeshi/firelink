@@ -1,9 +1,5 @@
 /* -*- mode: JavaScript; tab-width: 4; indent-tabs-mode: t; c-basic-offset: 4 -*- */
 //
-// @brief
-// @author ongaeshi
-// @date 2011/04/24   
-//
 //  Change for Firefox Add-on SDK.
 //
 // -------------------------------------------

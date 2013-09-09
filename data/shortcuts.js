@@ -1,11 +1,5 @@
-//
-// @file 
-// @brief
-// @author ongaeshi
-// @date   2011/04/16
-
 (function() {
-  
+
 function isSelected(window) {
   var sel = window.getSelection();
   if (sel.rangeCount <= 0) return false;
@@ -55,20 +49,20 @@ function onKeyDown(event) {
   // リンク生成
   if (isCtrl(event, window) && event.keyCode == 67/*C*/) {
     if (!event.shiftKey) {
-      if (!isSelected(window)) 
-        self.postMessage({kind: 'redoLink', linkdata: linkdata});      
-        
+      if (!isSelected(window))
+        self.postMessage({kind: 'redoLink', linkdata: linkdata});
+
     } else {
       // テキスト非選択時もダイアログを表示
       self.postMessage({kind: 'textFromClipboard', linkdata: linkdata});
-      
-      // if (!isSelected(window)) 
+
+      // if (!isSelected(window))
       //   self.postMessage({kind: 'textFromClipboard', linkdata: linkdata});
       // else
       //   self.postMessage({kind: 'redoLink', linkdata: linkdata});
     }
   }
-  
+
   // ダイレクト選択
   if (!isCtrl(event, window) && !event.shiftKey && !event.altKey) {
     // 1..9
@@ -86,4 +80,3 @@ function onKeyDown(event) {
 document.addEventListener("keydown", onKeyDown, true);
 
 })();
-

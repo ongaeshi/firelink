@@ -1,8 +1,4 @@
-//
-// @file 
-// @brief  設定パネル
-// @author ongaeshi
-// @date   2011/04/07
+// Setting Panel
 
 var ctable = null;
 
@@ -11,11 +7,11 @@ self.on('message', function(msg) {
    case "init":
     if (ctable == null) {
       ctable = new CocoaTable(msg.data, ['name', 'format']);
-      
+
       ctable._listener.onPushButton = function (msg) {
         self.postMessage({kind: msg});
       }
-      
+
       {
         var a = document.getElementById('link_recommended_settings');
         a.addEventListener('click', function (ev) {
