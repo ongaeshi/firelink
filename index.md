@@ -4,7 +4,7 @@ title: Copy title and URL in any format
 ---
 It's a Firefox plugin. You can copy title and URL of the Web page in any format -> [Install](https://addons.mozilla.org/en/firefox/addon/firelink/)
 
-<img alt='' src='/images/overview09.png' width='60%' />
+<img alt='firelink' src='/images/overview09.png' width='60%' />
 
 ## Install
 [FireLink :: Add-ons for Firefox](https://addons.mozilla.org/en/firefox/addon/firelink/)
