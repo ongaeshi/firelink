@@ -2,7 +2,7 @@
     "name": "firelink", 
     "license": "MPL 1.1/GPL 2.0/LGPL 2.1", 
     "author": "ongaeshi", 
-    "version": "2.3.0",
+    "version": "2.3.1",
     "fullName": "FireLink", 
     "id": "jid0-seIFaYDCkHVDZhihluA8wNSDuU4@jetpack",
     "description": "Copy title and URL in any format, from shortcut key and context menu.",

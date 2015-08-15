@@ -1,3 +1,7 @@
+# 2.3.1 2015/08/15
+
+* Fixed for Firefox 40.0
+
 # 2.3.0 2013/09/10
 
 * #3 make shortening service url as an option. (thanks chihchun)
