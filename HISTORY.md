@@ -1,3 +1,7 @@
+# 2.3.2 2016/04/05
+
+* #6 Fix %date% variable (thanks Hi-lo)
+
 # 2.3.1 2015/08/15
 
 * Fixed for Firefox 40.0
