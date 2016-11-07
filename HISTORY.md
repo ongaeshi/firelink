@@ -1,3 +1,7 @@
+# 2.3.3 2016/11/08
+
+* #7 Fix global match of link format (thanks icm7216)
+
 # 2.3.2 2016/04/05
 
 * #6 Fix %date% variable (thanks Hi-lo)
